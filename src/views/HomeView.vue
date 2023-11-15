@@ -25,43 +25,48 @@
         <h3 class="text-4xl text-[#054861] text-center">
             About Me
         </h3>
-        <div class="block lg:flex m-auto w-auto min-h-screen p-5">
-            <div class="m-auto h-72 w-72 mr-10">
-                <img src="/IMG_6200.png" alt="me" class="w-full h-full object-cover rounded-lg" />
-            </div>
-            <div class="block m-auto w-full lg:w-4/5">
-                <div class="block md:flex justify-center p-5 text-gray-500">
-                    <div class=" block text-center lg:w-2/6 m-5 md:mr-5 bg-slate-100 rounded-2xl">
-                        <h2 class="p-2">
-                        <b>Experience</b> 
-                        </h2>
-                        <div class="p-2 text-center">
-                            2 years+ <br> Frontend Experience/ Backend Technologies
+        <div class="lg:grid grid-rows-2 ">
+            <div class="block lg:flex m-auto w-auto h-auto p-5">
+                <div class="m-auto h-72 w-72 lg:mr-10">
+                    <img src="/IMG_6200.png" alt="me" class="w-full h-full object-cover rounded-lg" />
+                </div>
+                <div class="block m-auto w-full lg:w-4/5">
+                    <div class="block lg:flex justify-center p-5 text-gray-500">
+                        <div class=" block text-center w-auto m-auto lg:w-2/6 md:m-5 md:mr-5 bg-slate-100 rounded-2xl">
+                            <h2 class="p-2">
+                            <b>Experience</b> 
+                            </h2>
+                            <div class="p-2 text-center">
+                                2 years+ <br> Frontend Experience/ Backend Technologies
+                            </div>
+                        </div>
+                        <div class=" block text-center w-auto m-auto lg:w-2/6 md:m-5 bg-slate-100 rounded-2xl">
+                            <h2 class="p-2">
+                                Education
+                            </h2>
+                            <p class="p-2">
+                                BSc Bachelors Degree
+                            </p>
                         </div>
                     </div>
-                    <div class=" block text-center lg:w-2/6 m-5 bg-slate-100 rounded-2xl">
-                        <h2 class="p-2">
-                            Education
-                        </h2>
-                        <p class="p-2">
-                            BSc Bachelors Degree
-                        </p>
+
+                    <div class="w-2/3 text-center m-auto text-lg font-normal mb-3 text-gray-500">
+                        Meet Chile, a seasoned full-stack developer with over 2 years of coding experience.
+                        On the frontend, Chile is well-versed in HTML5, CSS3, and JavaScript,
+                        utilizing popular frameworks such as React.js and Vuejs to create dynamic and
+                        responsive user interfaces. With a keen eye for design.
                     </div>
                 </div>
-
-                <div class="w-2/3 text-center m-auto text-lg font-normal mb-3 text-gray-500">
-                    Meet Chile, a seasoned full-stack developer with over 2 years of coding experience.
-                    On the frontend, Chile is well-versed in HTML5, CSS3, and JavaScript,
-                    utilizing popular frameworks such as React.js and Vuejs to create dynamic and
-                    responsive user interfaces. With a keen eye for design 
-                    <br><br>
-                    On the backend, I excel in server-side scripting languages like Golang, Java and Node.js,
-                    building robust and scalable applications. Database management is second nature,
-                    as Chile(Stunna) navigates through SQL and NoSQL databases like MySQL, MongoDB, and PostgreSQL.
-                    RESTful API development is a forte,
-                    allowing for smooth communication between the frontend and backend components.
-                </div>
+            </div>
+            <div class="text-center w-2/3 lg:w-2/4 p-4 m-auto lg:m-2 text-lg font-normal h-fit text-gray-500">
+                <hr>
+                On the backend, I excel in server-side scripting languages like Golang, Java and Node.js,
+                building robust and scalable applications. Database management is second nature,
+                as Chile(Stunna) navigates through SQL and NoSQL databases like MySQL, MongoDB, and PostgreSQL.
+                RESTful API development is a forte,
+                allowing for smooth communication between the frontend and backend componentsss
             </div>
         </div>
+
     </div>
 </template>
