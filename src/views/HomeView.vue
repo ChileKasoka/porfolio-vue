@@ -32,7 +32,7 @@
                 </div>
                 <div class="block m-auto w-full lg:w-4/5">
                     <div class="block lg:flex justify-center p-5 text-gray-500">
-                        <div class=" block text-center w-auto m-auto lg:w-2/6 md:m-5 md:mr-5 bg-slate-100 rounded-2xl">
+                        <div class=" block text-center w-full lg:w-2/6 lg:m-5 bg-slate-100 rounded-2xl">
                             <h2 class="p-2">
                             <b>Experience</b> 
                             </h2>
@@ -40,7 +40,7 @@
                                 2 years+ <br> Frontend Experience/ Backend Technologies
                             </div>
                         </div>
-                        <div class=" block text-center w-auto m-auto lg:w-2/6 md:m-5 bg-slate-100 rounded-2xl">
+                        <div class=" block text-center w-full lg:w-2/6 lg:m-5 mt-5 bg-slate-100 rounded-2xl">
                             <h2 class="p-2">
                                 Education
                             </h2>
@@ -49,7 +49,6 @@
                             </p>
                         </div>
                     </div>
-
                     <div class="w-2/3 text-center m-auto text-lg font-normal mb-3 text-gray-500">
                         Meet Chile, a seasoned full-stack developer with over 2 years of coding experience.
                         On the frontend, Chile is well-versed in HTML5, CSS3, and JavaScript,
