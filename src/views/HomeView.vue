@@ -4,10 +4,10 @@
             <img src="/me.png" alt="me" class="w-full h-full object-cover rounded-full" />
         </div>
         <div class=" text-center m-auto leading-normal p-5 space-y-5">
-            <p class=" text-[#32363F] text-8xl">
+            <p class=" text-[#32363F] text-4xl lg:text-6xl xl:text-8xl">
                 Hello world,
             </p>
-            <h2 class=" text-6xl text-[#32363F]">
+            <h2 class=" text-4xl xl:text-6xl text-[#32363F]">
                 I'm Chile,
             </h2>
             <h1 class=" text-4xl text-[#054861]">
@@ -70,6 +70,39 @@
                     allowing for smooth communication between the frontend and backend componentsss
                 </div>
             </div>
+        </div>
+    </div>
+    <div >
+        <h1 class="text-center text-3xl">
+            Experience
+        </h1>
+        <div>
+            <div class="w-4/5 md:w-2/6 p-2 m-auto space-y-5 mt-5 mb-5 md:m-5 bg-slate-100 rounded-2xl">
+                <h1 class="text-center">
+                    Frontend
+                </h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 text-center ">
+                    <div class="p-2">
+                        HTML5
+                    </div>
+                    <div class="p-2">
+                        CSS
+                    </div>
+                    <div class="p-2">
+                        JavaScript
+                    </div>
+                    <div class="p-2">
+                        Vuejs 
+                    </div>
+                    <div class="p-2">
+                        React.js
+                    </div>
+                    <div class="p-2">
+                        Tailwind
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </template>

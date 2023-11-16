@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between px-20 h-18 items-center">
+    <div class="flex justify-between px-20 h-18 bg-[#bbbbbb] items-center">
         <div class="">
             <img src="/myworld.png" height="200" width="200" alt="myworld Image" class="mr-2" />
         </div>
