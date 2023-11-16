@@ -58,6 +58,9 @@
                 </div>
             </div>
             <div class="block lg:flex justify-between">
+                <div class="m-auto order-1 lg:order-2 h-64 w-64">
+                    <img src="/golang.png" alt="me" class="w-full h-full object-cover rounded-full" />
+                </div>
                 <div class="text-center order-2 lg:order-1 w-2/3 lg:w-2/4 flex-wrap p-4 m-auto text-lg font-normal h-fit text-gray-500">
                     <hr>
                     On the backend, I excel in server-side scripting languages like Golang, Java and Node.js,
@@ -65,9 +68,6 @@
                     as Chile(Stunna) navigates through SQL and NoSQL databases like MySQL, MongoDB, and PostgreSQL.
                     RESTful API development is a forte,
                     allowing for smooth communication between the frontend and backend componentsss
-                </div>
-                <div class="m-auto h-64 w-64">
-                    <img src="/golang.png" alt="me" class="w-full h-full object-cover rounded-full" />
                 </div>
             </div>
         </div>
