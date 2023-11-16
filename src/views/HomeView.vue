@@ -76,8 +76,8 @@
         <h1 class="text-center text-3xl">
             Experience
         </h1>
-        <div>
-            <div class="w-4/5 md:w-2/6 p-2 m-auto space-y-5 mt-5 mb-5 md:m-5 bg-slate-100 rounded-2xl">
+        <div class="grid grid-cols-1 md:flex m-auto">
+            <div class="w-4/5 md:w-2/6 lg:w-2/6 p-2 m-auto space-y-5 mt-5 mb-5 bg-slate-100 rounded-2xl">
                 <h1 class="text-center">
                     Frontend
                 </h1>
@@ -102,7 +102,25 @@
                     </div>
                 </div>
             </div>
-
+            <div class="w-4/5 md:w-2/6 lg:w-2/6 p-2 m-auto space-y-5 mt-5 mb-5 bg-slate-100 rounded-2xl">
+                <h1 class="text-center">
+                    Backend Technologies
+                </h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 text-center ">
+                    <div class="p-2">
+                        Golang
+                    </div>
+                    <div class="p-2">
+                        PHP
+                    </div>
+                    <div class="p-2">
+                        JAVA
+                    </div>
+                    <div class="p-2">
+                        Node js
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
