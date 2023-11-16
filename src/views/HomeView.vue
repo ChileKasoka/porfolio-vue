@@ -28,23 +28,23 @@
         <div class="lg:grid grid-rows-2 ">
             <div class="block lg:flex m-auto w-auto h-auto p-5">
                 <div class="m-auto h-72 w-72 lg:mr-10">
-                    <img src="/IMG_6200.png" alt="me" class="w-full h-full object-cover rounded-lg" />
+                    <img src="/db.png" alt="me" class="w-full h-full object-cover rounded-lg" />
                 </div>
                 <div class="block m-auto w-full lg:w-4/5">
                     <div class="block lg:flex justify-center p-5 text-gray-500">
                         <div class=" block text-center w-full lg:w-2/6 lg:m-5 bg-slate-100 rounded-2xl">
-                            <h2 class="p-2">
+                            <h2 class="p-2 text-xl">
                             <b>Experience</b> 
                             </h2>
-                            <div class="p-2 text-center">
+                            <div class="p-2 text-xl text-center">
                                 2 years+ <br> Frontend Experience/ Backend Technologies
                             </div>
                         </div>
                         <div class=" block text-center w-full lg:w-2/6 lg:m-5 mt-5 bg-slate-100 rounded-2xl">
-                            <h2 class="p-2">
-                                Education
+                            <h2 class="text-xl p-2">
+                                <b>Education</b>
                             </h2>
-                            <p class="p-2">
+                            <p class="text-xl p-2">
                                 BSc Bachelors Degree
                             </p>
                         </div>
@@ -57,15 +57,19 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center w-2/3 lg:w-2/4 p-4 m-auto lg:m-2 text-lg font-normal h-fit text-gray-500">
-                <hr>
-                On the backend, I excel in server-side scripting languages like Golang, Java and Node.js,
-                building robust and scalable applications. Database management is second nature,
-                as Chile(Stunna) navigates through SQL and NoSQL databases like MySQL, MongoDB, and PostgreSQL.
-                RESTful API development is a forte,
-                allowing for smooth communication between the frontend and backend componentsss
+            <div class="block lg:flex justify-between">
+                <div class="text-center order-2 lg:order-1 w-2/3 lg:w-2/4 flex-wrap p-4 m-auto text-lg font-normal h-fit text-gray-500">
+                    <hr>
+                    On the backend, I excel in server-side scripting languages like Golang, Java and Node.js,
+                    building robust and scalable applications. Database management is second nature,
+                    as Chile(Stunna) navigates through SQL and NoSQL databases like MySQL, MongoDB, and PostgreSQL.
+                    RESTful API development is a forte,
+                    allowing for smooth communication between the frontend and backend componentsss
+                </div>
+                <div class="m-auto h-64 w-64">
+                    <img src="/golang.png" alt="me" class="w-full h-full object-cover rounded-full" />
+                </div>
             </div>
         </div>
-
     </div>
 </template>
