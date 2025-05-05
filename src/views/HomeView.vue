@@ -16,12 +16,12 @@
             Hello World
             </p>
             <br>
-            <h1 class="text-4xl lg:text-6xl xl:text-8xl font-extrabold leading-tight">
+            <h1 class="text-4xl lg:text-5xl xl:text-8xl font-extrabold leading-tight">
               I'm Chile, a Software Developer
             </h1>
             <br>
             <p class="text-amber-700 text-xl font-light">
-              and other things...
+              in a muiltiverse of other things...
             </p>
             <br>
             <button class=" bg-gray-900 hover:bg-amber-700 text-amber-700 hover:text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300">

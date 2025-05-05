@@ -1,6 +1,6 @@
 <template>
     <div class=" bottom-0">
-        <p class=" text-gray-800 text-center">&copy; {{ currentDate }} Portfolio. All rights reserved</p>
+        <p class=" text-gray-800 text-center">&copy; {{ currentDate }} stunna. All rights reserved</p>
     </div>
 </template>
 
