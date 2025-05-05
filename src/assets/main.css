@@ -1,3 +1,10 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+    font-family: 'Tagesschrift';
+    src: url('/src/assets/fonts/Tagesschrift.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

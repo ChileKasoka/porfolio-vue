@@ -1,126 +1,321 @@
 <template>
-    <div class=" min-h-screen block lg:flex justify-around">
-        <div class="lg:ml-64 m-auto h-64 w-64">
-            <img src="/me.png" alt="me" class="w-full h-full object-cover rounded-full" />
+    <div class=" bg-gradient-to-r from-slate-800 via-blue-900 to-slate-900 text-white flex flex-col justify-center items-center py-20 px-6 lg:px-20">
+      <!-- Hero Section -->
+      <div class="min-h-screen items-center justify-center space-y-8 animate-fade-in">
+        <div class="container flex-col-reverse lg:flex-row pt-20 flex items-center">
+        <!-- Profile Image -->
+        <div class="mx-auto mb-8">
+          <img 
+            src="/stunna.png" 
+            alt="My Profile Image" 
+            class="w-48 h-48 lg:w-64 lg:h-64 object-cover rounded-full shadow-xl transform hover:scale-105 transition-all duration-300"
+          />
         </div>
-        <div class=" text-center m-auto leading-normal p-5 space-y-5">
-            <p class=" text-[#32363F] text-4xl lg:text-6xl xl:text-8xl">
-                Hello world,
+          <div class="about text-right ml-auto mr-0">
+            <p class="font-tagesschrift text-amber-700 text-3xl lg:text-5xl font-extrabold xl:text-6xl tracking-wide">
+            Hello World
             </p>
-            <h2 class=" text-4xl xl:text-6xl text-[#32363F]">
-                I'm Chile,
-            </h2>
-            <h1 class=" text-4xl text-[#054861]">
-                Full Stack Dev.
+            <br>
+            <h1 class="text-4xl lg:text-6xl xl:text-8xl font-extrabold leading-tight">
+              I'm Chile, a Software Developer
             </h1>
-            <button onsubmit="handleDownload()" class=" hover:bg-[#ebe8e8] text-[#054861] w-44 h-12 rounded-full bg-[#BFBBBB]">
-                Download CV
+            <br>
+            <p class="text-amber-700 text-xl font-light">
+              and other things...
+            </p>
+            <br>
+            <button class=" bg-gray-900 hover:bg-amber-700 text-amber-700 hover:text-white font-semibold py-3 px-6 rounded-full shadow-md transition duration-300">
+              Get in Touch
             </button>
+          </div>
         </div>
-    </div>
-    <div class=" leading-normal ">
-        <h1 class="text-center text-[#054861]">
-            Get to know me better
-        </h1>
-        <h3 class="text-4xl text-[#054861] text-center">
-            About Me
-        </h3>
-        <div class="lg:grid grid-rows-2 ">
-            <div class="block lg:flex m-auto w-auto h-auto p-5">
-                <div class="m-auto h-72 w-72 lg:mr-10">
-                    <img src="/db.png" alt="me" class="w-full h-full object-cover rounded-lg" />
-                </div>
-                <div class="block m-auto w-full lg:w-4/5">
-                    <div class="block lg:flex justify-center p-5 text-gray-500">
-                        <div class=" block text-center w-full lg:w-2/6 lg:m-5 bg-slate-100 rounded-2xl">
-                            <h2 class="p-2 text-xl">
-                            <b>Experience</b> 
-                            </h2>
-                            <div class="p-2 text-xl text-center">
-                                2 years+ <br> Frontend Experience/ Backend Technologies
-                            </div>
-                        </div>
-                        <div class=" block text-center w-full lg:w-2/6 lg:m-5 mt-5 bg-slate-100 rounded-2xl">
-                            <h2 class="text-xl p-2">
-                                <b>Education</b>
-                            </h2>
-                            <p class="text-xl p-2">
-                                BSc Bachelors Degree
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w-2/3 text-center m-auto text-lg font-normal mb-3 text-gray-500">
-                        Meet Chile, a seasoned full-stack developer with over 2 years of coding experience.
-                        On the frontend, Chile is well-versed in HTML5, CSS3, and JavaScript,
-                        utilizing popular frameworks such as React.js and Vuejs to create dynamic and
-                        responsive user interfaces. With a keen eye for design.
-                    </div>
-                </div>
-            </div>
-            <div class="block lg:flex justify-between">
-                <div class="m-auto order-1 lg:order-2 h-64 w-64">
-                    <img src="/golang.png" alt="me" class="w-full h-full object-cover rounded-full" />
-                </div>
-                <div class="text-center order-2 lg:order-1 w-2/3 lg:w-2/4 flex-wrap p-4 m-auto text-lg font-normal h-fit text-gray-500">
-                    <hr>
-                    On the backend, I excel in server-side scripting languages like Golang, Java and Node.js,
-                    building robust and scalable applications. Database management is second nature,
-                    as Chile(Stunna) navigates through SQL and NoSQL databases like MySQL, MongoDB, and PostgreSQL.
-                    RESTful API development is a forte,
-                    allowing for smooth communication between the frontend and backend componentsss
-                </div>
-            </div>
+      </div>
+
+      <div class="min-h-screen w-full flex flex-col md:flex-row px-4 md:px-12 py-8 gap-8">
+  <!-- About Section -->
+  <div class="w-full md:w-3/4">
+    <section data-aos="fade-up" class="text-left mt-8 space-y-4">
+      <h2 class="text-2xl font-light text-amber-700">About Me</h2>
+      <h3 class="text-4xl font-extrabold text-amber-700">Design, Code, Repeat</h3>
+      <p class="text-xl text-gray-200">
+        I'm a result-oriented Software Developer who crafts fast, scalable, and elegant web solutions—
+        <br>turning complex problems into clean, user-friendly experiences.
+        <br>
+        I specialize in creating scalable, efficient, and user-friendly applications with over 3 years of experience in both frontend and backend technologies.
+      </p>
+    </section>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="w-full md:w-1/2">
+    <section class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8">
+      <!-- Projects Completed -->
+      <div>
+        <div class="flex items-center text-5xl font-extrabold text-blue-700">
+          <p id="projects">0</p>
+          <span class="text-plus">+</span>
         </div>
-    </div>
-    <div >
-        <h1 class="text-center text-3xl">
-            Experience
-        </h1>
-        <div class="grid grid-cols-1 md:flex m-auto">
-            <div class="w-4/5 md:w-2/6 lg:w-2/6 p-2 m-auto space-y-5 mt-5 mb-5 bg-slate-100 rounded-2xl">
-                <h1 class="text-center">
-                    Frontend
-                </h1>
-                <div class="grid grid-cols-1 md:grid-cols-2 text-center ">
-                    <div class="p-2">
-                        HTML5
-                    </div>
-                    <div class="p-2">
-                        CSS
-                    </div>
-                    <div class="p-2">
-                        JavaScript
-                    </div>
-                    <div class="p-2">
-                        Vuejs 
-                    </div>
-                    <div class="p-2">
-                        React.js
-                    </div>
-                    <div class="p-2">
-                        Tailwind
-                    </div>
-                </div>
-            </div>
-            <div class="w-4/5 md:w-2/6 lg:w-2/6 p-2 m-auto space-y-5 mt-5 mb-5 bg-slate-100 rounded-2xl">
-                <h1 class="text-center">
-                    Backend Technologies
-                </h1>
-                <div class="grid grid-cols-1 md:grid-cols-2 text-center ">
-                    <div class="p-2">
-                        Golang
-                    </div>
-                    <div class="p-2">
-                        PHP
-                    </div>
-                    <div class="p-2">
-                        JAVA
-                    </div>
-                    <div class="p-2">
-                        Node js
-                    </div>
-                </div>
-            </div>
+        <h3 class="text-xl font-semibold mt-2">Projects Completed</h3>
+      </div>
+
+      <!-- Years of Experience -->
+      <div>
+        <div class="flex items-center text-5xl font-extrabold text-green-600">
+          <p id="experience">0</p>
+          <span class="text-plus">+</span>
         </div>
+        <h3 class="text-xl font-semibold mt-2">Years of Experience</h3>
+      </div>
+
+      <!-- Happy Clients -->
+      <div>
+        <div class="flex items-center text-5xl font-extrabold text-purple-600">
+          <p id="clients">0</p>
+          <span class="text-plus">+</span>
+        </div>
+        <h3 class="text-xl font-semibold mt-2">Happy Clients</h3>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+      <div class="project-section">
+        <section class="py-20 px-4">
+          <h2 class="text-4xl lg:text-5xl font-extrabold text-center mb-12 text-amber-700">
+            Featured Projects
+          </h2>
+
+          <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+            <div
+              v-for="(project, index) in state.projects"
+              :key="index"
+              class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+            >
+              <img :src="project.image" :alt="project.title" class="w-full h-48 object-cover" />
+              <div class="p-6 space-y-3">
+                <h3 class="text-2xl font-semibold text-[#054861]">{{ project.title }}</h3>
+                <p class="text-gray-700 text-base">{{ project.description }}</p>
+                <a
+                  :href="project.link"
+                  target="_blank"
+                  class="inline-block mt-4 text-[#054861] font-medium hover:underline"
+                >
+                  View Project →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="services text-center mt-20 mb-20">
+        <h2 class="text-2xl text-amber-700">Services</h2>
+        <p class="text-4xl text-amber-700 font-extrabold">Tailored Solutions Offered</p>
+      </div>
+
+      <div class=" w-full">
+        <div class="flex flex-col min-h-screen md:flex-row items-start gap-8 w-full">
+          <!-- Left Column -->
+          <div class="w-full md:w-1/2 text-left space-y-4">
+            <h1 class="text-3xl text-amber-700 font-extrabold">
+              UX/UI Design & Frontend Technologies
+            </h1>
+            <p class="text-white text-2xl">
+              I craft engaging user interfaces and smooth user experiences for both web and mobile apps, using modern frameworks and a keen eye for design best practices.
+            </p>
+          </div>
+
+          <!-- Right Column: Tech Icons -->
+          <div class="w-full md:w-1/2 flex flex-wrap gap-4 items-start pt-4">
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/figma.svg" alt="Figma" class="w-5 h-5 mr-2" /> Figma
+            </span>
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/react.svg" alt="React" class="w-5 h-5 mr-2" /> React
+            </span>
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/tailwind.svg" alt="Tailwind" class="w-5 h-5 mr-2" /> Tailwind
+            </span>
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/vue.svg" alt="VueJs" class="w-5 h-5 mr-2" /> VueJs
+            </span>
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/flutter.svg" alt="Flutter" class="w-5 h-5 mr-2" /> Flutter
+            </span>
+          </div>
+        </div>
+
+        <div class="min-h-screen flex flex-col md:flex-row items-start justify-between px-6 gap-8">
+
+
+          <!-- Right Column: Tech Icons -->
+          <div class="w-full md:w-1/2 flex flex-wrap justify-end gap-4 pt-4">
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/node.svg" alt="NodeJS" class="w-5 h-5 mr-2" /> NodeJS
+            </span>
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/golang.svg" alt="Golang" class="w-5 h-5 mr-2" /> Golang
+            </span>
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/php.svg" alt="PHP" class="w-5 h-5 mr-2" /> PHP
+            </span>
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/spring.svg" alt="Spring" class="w-5 h-5 mr-2" /> Spring Framework
+            </span>
+          </div>
+          <!-- Left Column: Text -->
+          <div class="w-full md:w-1/2 text-right space-y-4">
+            <h1 class="text-3xl text-amber-700 font-extrabold">
+              Server Side Solutions
+            </h1>
+            <p class="text-white text-2xl">
+              I build robust and scalable backend systems using Golang, Node.js, and PostgreSQL, with a strong focus on performance, security, and seamless integration with frontend frameworks.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="min-h-screen flex flex-col md:flex-row items-start justify-between px-6 gap-8">
+          <!-- Left Column: Text -->
+          <div class="w-full md:w-1/2 text-left space-y-4 pr-0 md:pr-8">
+            <h1 class="text-3xl text-amber-700 font-extrabold">Cloud and DevOps</h1>
+            <p class="text-white text-2xl">
+              Containerized backend services for consistent development and deployment across environments.<br>
+              I utilize Docker and Kubernetes for efficient orchestration and scaling of applications.<br>
+              Deploy scalable APIs and services using EC2, S3, and RDS. Configure environments with IAM and monitor with CloudWatch.
+            </p>
+          </div>
+
+          <!-- Right Column: Tech Icons -->
+          <div class="w-full md:w-1/2 flex flex-wrap justify-start gap-4 pt-4">
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/docker.svg" alt="Docker" class="w-5 h-5 mr-2" /> Docker
+            </span>
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/kubernetes.svg" alt="Kubernetes" class="w-5 h-5 mr-2" /> Kubernetes
+            </span>
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/aws.svg" alt="AWS" class="w-5 h-5 mr-2" /> AWS
+            </span>
+            <span class="flex items-center bg-gray-900 px-6 py-3 rounded-full text-white text-lg">
+              <img src="/icons/github.svg" alt="GitHub" class="w-5 h-5 mr-2" /> GitHub
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <section class="min-h-screen w-full md:w-1/2 px-4 py-16 flex items-center justify-center">
+        <div class="w-full bg-gray-800 p-8 rounded-lg shadow-lg">
+          <h2 class="text-3xl font-bold text-white mb-6 text-center">Have a project in mind ?</h2>
+          <p class="text-2xl font-light text-center">Get in Touch</p>
+          <br>
+          <form action="#" method="POST" class="space-y-6">
+            
+            <!-- Name -->
+            <div>
+              <label for="name" class="block text-white text-sm font-semibold mb-2">Your Name</label>
+              <input type="text" id="name" name="name" required
+                class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-white text-sm font-semibold mb-2">Email Address</label>
+              <input type="email" id="email" name="email" required
+                class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-white text-sm font-semibold mb-2">Your Message</label>
+              <textarea id="message" name="message" rows="5" required
+                class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="text-center">
+              <button type="submit"
+                class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-full transition duration-300">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
     </div>
-</template>
+  </template>
+  
+  <script setup>
+  function handleDownload() {
+    // You can link to your CV file here
+    window.open('/your-cv.pdf', '_blank');
+  }
+  
+import { reactive } from 'vue';
+
+const state = reactive({
+  projects: [
+    {
+      title: "Construction Manager",
+      description: "A project management tool for construction teams",
+      image: "/construction.png",
+      link: "https://example.com/construction",
+    },
+    {
+      title: "Appointment Scheduler",
+      description: "Book appointments with ease",
+      image: "/book.png",
+      link: "https://example.com/real-estate",
+    },
+    {
+      title: "ELMIS",
+      description: "Electronic Logistics Management Information System under USAID",
+      image: "/elmis.png",
+      link: "https://openlmis.org/implementation_region/zambia/",
+    },
+  ],
+});
+
+  function animateCounter(id, target, duration = 4000) {
+    const el = document.getElementById(id);
+    let start = 0;
+    const increment = target / (duration / 16); // 60 FPS approx.
+
+    const updateCounter = () => {
+      start += increment;
+      if (start < target) {
+        el.textContent = Math.floor(start);
+        requestAnimationFrame(updateCounter);
+      } else {
+        el.textContent = target;
+      }
+    };
+
+    updateCounter();
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    animateCounter('projects', 4);
+    animateCounter('experience', 3);
+    animateCounter('clients', 3);
+  });
+  </script>
+  
+  <style scoped>
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1.2s ease-out;
+  }
+  </style>
+  
