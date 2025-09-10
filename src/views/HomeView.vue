@@ -36,7 +36,7 @@
 
     <!-- About + Stats -->
     <section id="about" class="w-full flex flex-col md:flex-row px-6 lg:px-20 py-20 gap-12 font-coder bg-gray-900 text-gray-100">
-      <div class="w-full md:w-3/4 space-y-6">
+      <div class="w-full md:w-3/4 space-y-6 text-center md:text-left">
         <h2 class="text-2xl font-semibold text-amber-400">About Me</h2>
         <h3 class="text-3xl lg:text-5xl font-extrabold text-cyan-400">Design. Code. Deliver.</h3>
         <p class="text-xl text-gray-300 leading-relaxed">
@@ -124,10 +124,65 @@
       <p class="text-lg text-gray-700 mb-8">
         Interested in collaborating or hiring me? I’m just an email away.
       </p>
-      <a href="mailto:your.email@example.com" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
+      <!-- <a href="mailto:your.email@example.com" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
         Contact Me
-      </a>
+      </a> -->
     </section>
+
+  <section id="contact" class="py-20 bg-slate-50 text-slate-700 w-full">
+    <div class="container mx-auto px-6 lg:px-20">
+      <h2 class="text-4xl font-bold mb-8 text-center">Contact Me</h2>
+
+      <form
+        class="max-w-2xl mx-auto border border-gray-400 p-8 rounded-2xl shadow-lg space-y-6"
+      >
+        <!-- Name -->
+        <div>
+          <label for="name" class="block text-sm font-semibold mb-2">Name</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Your name"
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm font-semibold mb-2">Email</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="you@example.com"
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+          />
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="message" class="block text-sm font-semibold mb-2"
+            >Message</label
+          >
+          <textarea
+            id="message"
+            rows="5"
+            placeholder="Write your message..."
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+          ></textarea>
+        </div>
+
+        <!-- Button -->
+        <div class="text-center">
+          <button
+            type="submit"
+            class="px-8 py-3 bg-amber-600 hover:bg-amber-700 rounded-full text-white font-semibold shadow-md transition"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
   </div>
 </template>
 

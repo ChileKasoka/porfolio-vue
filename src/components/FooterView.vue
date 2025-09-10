@@ -8,7 +8,7 @@
       </div>
 
       <!-- Quick Links -->
-      <div class="mb-4 md:mb-0">
+      <div class="mb-4 md:mb-0 text-center md:text-left">
         <h3 class="font-semibold mb-2">Quick Links</h3>
         <ul class="space-y-1 text-gray-400">
           <li><a href="/#about" class="hover:text-white">About Me</a></li>
@@ -22,11 +22,18 @@
       <!-- Social Links -->
       <div class="text-center md:text-right">
         <h3 class="font-semibold mb-2">Connect with me</h3>
-        <div class="flex justify-center md:justify-end space-x-4">
-          <a href="https://linkedin.com/in/ckayzy" target="_blank" class="hover:text-blue-500">LinkedIn</a>
-          <a href="https://github.com/ckayzy" target="_blank" class="hover:text-gray-100">GitHub</a>
-          <a href="https://twitter.com/ckayzy" target="_blank" class="hover:text-blue-400">Twitter</a>
-          <a href="mailto:ckayzy@example.com" class="hover:text-red-400">Email</a>
+        <div class="md:flex justify-center md:justify-end space-x-4">
+          <a href="https://www.linkedin.com/in/chile-kasoka-402708195/" target="_blank" class="hover:text-blue-500">LinkedIn</a>
+          <a href="https://github.com/ChileKasoka" target="_blank" class="hover:text-gray-100">GitHub</a>
+          <a href="https://x.com/crzykyzy" target="_blank" class="hover:text-blue-400">X</a>
+            <a 
+            href="mailto:kasoka.chile@gmail.com" 
+            class="hover:text-red-400"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            Email
+            </a>
         </div>
       </div>
     </div>
