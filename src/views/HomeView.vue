@@ -195,13 +195,13 @@ const state = reactive({
       title: "Construction Management App",
       description: "Full-stack system with RBAC, project tracking, and role management.",
       image: "/construction.png",
-      link: "https://github.com/yourrepo/construction",
+      link: "https://github.com/ChileKasoka/csm",
     },
     {
       title: "Electronic Supply Chain Management Information System USAID",
       description: "tracks orders, inventory, and suppliers with real-time updates.",
       image: "/elmis.png",
-      link: "https://github.com/yourrepo/realestate",
+      link: "https://zm-elmis.org/",
     },
     {
       title: "Appointment Booking System",
