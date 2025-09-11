@@ -20,9 +20,11 @@
           I turn complex challenges into elegant digital solutions—balancing performance, clean design, and usability.
         </p>
         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <button class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
-            Get in Touch
-          </button>
+          <a href="#contact">
+            <button class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
+              Get in Touch
+            </button>
+          </a>
           <a 
             href="/Chilekesha-Kasoka-Resume.pdf" 
             download 
@@ -134,6 +136,7 @@
       <h2 class="text-4xl font-bold mb-8 text-center">Contact Me</h2>
 
       <form
+        @submit.prevent="handleSubmit"
         class="max-w-2xl mx-auto border border-gray-400 p-8 rounded-2xl shadow-lg space-y-6"
       >
         <!-- Name -->
@@ -141,8 +144,11 @@
           <label for="name" class="block text-sm font-semibold mb-2">Name</label>
           <input
             id="name"
+            name="name"
+            v-model="form.name"
             type="text"
             placeholder="Your name"
+            required
             class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
         </div>
@@ -152,21 +158,25 @@
           <label for="email" class="block text-sm font-semibold mb-2">Email</label>
           <input
             id="email"
+            name="email"
+            v-model="form.email"
             type="email"
             placeholder="you@example.com"
+            required
             class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
         </div>
 
         <!-- Message -->
         <div>
-          <label for="message" class="block text-sm font-semibold mb-2"
-            >Message</label
-          >
+          <label for="message" class="block text-sm font-semibold mb-2">Message</label>
           <textarea
             id="message"
+            name="message"
+            v-model="form.message"
             rows="5"
             placeholder="Write your message..."
+            required
             class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
           ></textarea>
         </div>
@@ -175,19 +185,69 @@
         <div class="text-center">
           <button
             type="submit"
-            class="px-8 py-3 bg-amber-600 hover:bg-amber-700 rounded-full text-white font-semibold shadow-md transition"
+            :disabled="loading"
+            class="px-8 py-3 bg-amber-600 hover:bg-amber-700 rounded-full text-white font-semibold shadow-md transition disabled:opacity-50"
           >
-            Send Message
+            {{ loading ? "Sending..." : "Send Message" }}
           </button>
         </div>
+
+        <!-- Success / Error Messages -->
+        <p v-if="success" class="text-green-600 text-center mt-4">
+          ✅ Message sent successfully!
+        </p>
+        <p v-if="error" class="text-red-600 text-center mt-4">
+          ❌ Oops! Something went wrong. Please try again.
+        </p>
       </form>
     </div>
   </section>
+
   </div>
 </template>
 
 <script setup>
 import { reactive, onMounted } from "vue";
+
+import { ref } from "vue";
+
+const form = ref({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const loading = ref(false);
+const success = ref(false);
+const error = ref(false);
+
+// replace with your Formspree endpoint
+const FORMSPREE_URL = "https://formspree.io/f/xnnbwypj";
+
+const handleSubmit = async () => {
+  loading.value = true;
+  success.value = false;
+  error.value = false;
+
+  try {
+    const response = await fetch(FORMSPREE_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form.value),
+    });
+
+    if (response.ok) {
+      success.value = true;
+      form.value = { name: "", email: "", message: "" }; // reset form
+    } else {
+      error.value = true;
+    }
+  } catch (err) {
+    error.value = true;
+  } finally {
+    loading.value = false;
+  }
+};
 
 const state = reactive({
   projects: [
