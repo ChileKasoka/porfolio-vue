@@ -286,10 +286,32 @@ const skills = [
 ];
 
 const services = [
-  { title: "Web Development", description: "Building scalable, responsive, and modern web apps tailored to client needs." },
-  { title: "Backend APIs", description: "Designing and implementing secure, high-performance REST APIs." },
-  { title: "Database Design", description: "Efficient schema design and optimization for PostgreSQL & SQL-based systems." },
+  { 
+    title: "Web Development", 
+    description: "Building scalable, responsive, and modern web apps tailored to client needs." 
+  },
+  { 
+    title: "Backend APIs", 
+    description: "Designing and implementing secure, high-performance REST APIs." 
+  },
+  { 
+    title: "Database Design", 
+    description: "Efficient schema design and optimization for PostgreSQL & SQL-based systems." 
+  },
+  { 
+    title: "Networking", 
+    description: "Setting up, managing, and troubleshooting networks for reliable connectivity." 
+  },
+  { 
+    title: "Cloud Infrastructure", 
+    description: "Deploying and managing scalable cloud environments using AWS, Azure, or GCP." 
+  },
+  { 
+    title: "IT Support & Troubleshooting", 
+    description: "Providing technical support, diagnosing issues, and ensuring systems run smoothly." 
+  }
 ];
+
 
 const animateCounter = (id, target) => {
   let count = 0;
