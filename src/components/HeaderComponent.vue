@@ -1,18 +1,18 @@
 <template>
   <div class="w-full sticky top-0 z-50">
     <!-- Navbar -->
-    <div class="h-16 flex justify-between px-8 lg:px-20 py-6 shadow-lg items-center bg-slate-50">
+    <div class="h-16 flex justify-between px-8 lg:px-20 py-6 shadow-lg items-center bg-gray-900 text-gray-200">
       <!-- Logo -->
-      <div class="text-slate-900 text-2xl font-bold">
+      <div class=" text-2xl font-bold">
         $ ck
       </div>
 
       <!-- Desktop Links -->
-      <ul class="hidden lg:flex justify-end space-x-8 text-slate-700">
+      <ul class="hidden lg:flex justify-end space-x-8">
         <li v-for="(link, index) in links" :key="index">
           <a
             :href="link.href"
-            class="text-lg font-semibold hover:text-slate-500 transition-colors duration-300 transform hover:scale-110"
+            class="text-lg font-semibold hover:text-amber-500 transition-colors duration-300 transform hover:scale-110"
             @click.prevent="scrollToSection(link.href)"
           >
             {{ link.text }}
