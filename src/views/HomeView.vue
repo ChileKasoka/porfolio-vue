@@ -1,317 +1,233 @@
 <template>
-  <div class="bg-white text-gray-900 flex flex-col justify-center items-center">
-    <!-- Hero -->
-    <section id="home" class="min-h-screen flex flex-col-reverse lg:flex-row items-center justify-center gap-12 px-6 lg:px-20 py-24 animate-fade-in">
-      <div class="mx-auto lg:mx-0">
+  <div class="bg-[#0b0f19] text-white overflow-hidden">
+
+    <!-- HERO -->
+    <section class="min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 py-20 relative">
+
+      <!-- Glow background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-transparent to-cyan-900/30 blur-3xl"></div>
+
+      <!-- Image -->
+      <div class="relative z-10">
         <img 
-          src="/stunna.png" 
-          alt="Profile Image" 
-          class="w-52 h-52 lg:w-72 lg:h-72 object-cover rounded-full shadow-2xl transform hover:scale-105 transition-all duration-500"
+          src="/stunna.png"
+          class="w-56 h-56 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-cyan-500/40 shadow-[0_0_60px_rgba(34,211,238,0.4)] hover:scale-105 transition duration-500"
         />
       </div>
-      <div class="text-center lg:text-left max-w-2xl">
-        <h1 class="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight text-slate-900">
-          Hi, I’m <span class="text-amber-600">Chile</span>
+
+      <!-- Text -->
+      <div class="z-10 max-w-2xl text-center lg:text-left mt-10 lg:mt-0 lg:ml-16">
+        <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight">
+          Hi, I’m 
+          <span class="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            Chile
+          </span>
         </h1>
-        <p class="mt-6 text-2xl lg:text-3xl font-light text-gray-700">
-          Software Developer specializing in scalable, efficient, and user-friendly applications.
+
+        <p class="mt-6 text-xl text-gray-300">
+          I build scalable systems, powerful APIs, and modern web applications.
         </p>
-        <p class="mt-4 text-lg text-gray-600">
-          I turn complex challenges into elegant digital solutions—balancing performance, clean design, and usability.
-        </p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <a href="#contact">
-            <button class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
-              Get in Touch
-            </button>
-          </a>
-          <a 
-            href="/Chilekesha-Kasoka-Resume.pdf" 
-            download 
-            class="bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300"
-          >
+
+        <div class="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+          <a href="#contact" class="btn-primary">Hire Me</a>
+          <a href="/Chilekesha_Kasoka_CV_2026.pdf" download class="btn-outline">
             Download CV
           </a>
         </div>
       </div>
     </section>
 
-    <!-- About + Stats -->
-    <section id="about" class="w-full flex flex-col md:flex-row px-6 lg:px-20 py-20 gap-12 font-coder bg-gray-900 text-gray-100">
-      <div class="w-full md:w-3/4 space-y-6 text-center md:text-left">
-        <h2 class="text-2xl font-semibold text-amber-400">About Me</h2>
-        <h3 class="text-3xl lg:text-5xl font-extrabold text-cyan-400">Design. Code. Deliver.</h3>
-        <p class="text-xl text-gray-300 leading-relaxed">
-          I’m a results-oriented developer passionate about turning complex requirements into clean, 
-          performant, and user-centric applications. My focus is on building scalable web solutions 
-          that blend modern design practices with solid backend architecture.
-        </p>
-      </div>
-      <div class="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-10">
-        <div class="text-center">
-          <div class="text-5xl font-extrabold text-blue-400">
-            <p id="projects-complete">0</p><span>+</span>
-          </div>
-          <h3 class="text-lg font-medium mt-2 text-gray-200">Projects Completed</h3>
+    <!-- ABOUT -->
+    <section class="py-20 px-6 lg:px-20 bg-[#0f172a]">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+        <div>
+          <h2 class="section-title">About Me</h2>
+          <h3 class="text-3xl lg:text-5xl font-bold mt-4 text-cyan-400 font-coder">
+            Design. Code. Deliver.
+          </h3>
+
+          <p class="mt-6 text-gray-300 leading-relaxed">
+            I specialize in backend systems with Golang and scalable architectures.
+            I design APIs, build real-world systems, and create solutions that are fast, secure, and production-ready.
+          </p>
         </div>
-        <div class="text-center">
-          <div class="text-5xl font-extrabold text-green-400">
-            <p id="experience">0</p><span>+</span>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 gap-6">
+          <div class="stat-card">
+            <p id="projects-complete" class="stat-number">0</p>
+            <span>Projects</span>
           </div>
-          <h3 class="text-lg font-medium mt-2 text-gray-200">Years of Experience</h3>
-        </div>
-        <div class="text-center">
-          <div class="text-5xl font-extrabold text-purple-400">
-            <p id="clients">0</p><span>+</span>
+          <div class="stat-card">
+            <p id="experience" class="stat-number">0</p>
+            <span>Years</span>
           </div>
-          <h3 class="text-lg font-medium mt-2 text-gray-200">Happy Clients</h3>
+          <div class="stat-card col-span-2">
+            <p id="clients" class="stat-number">0</p>
+            <span>Clients</span>
+          </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="project-section bg-slate-50 w-full py-20 px-6">
-      <h2 class="text-4xl lg:text-5xl font-extrabold text-center mb-12 text-amber-600">Featured Projects</h2>
-      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-        <div
-          v-for="(project, index) in state.projects"
-          :key="index"
-          class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
-        >
-          <img :src="project.image" :alt="project.title" class="w-full h-52 object-cover" />
-          <div class="p-6 space-y-3">
-            <h3 class="text-2xl font-semibold text-slate-900">{{ project.title }}</h3>
-            <p class="text-gray-600 text-base">{{ project.description }}</p>
-            <a
-              :href="project.link"
-              target="_blank"
-              class="inline-block mt-4 text-amber-600 font-medium hover:underline"
-            >
-              View Project →
+    <!-- PROJECTS -->
+    <section class="py-20 px-6">
+      <h2 class="section-title text-center">Projects</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto mt-12">
+
+        <div v-for="(project, index) in state.projects"
+             :key="index"
+             class="project-card group">
+
+          <img :src="project.image" class="project-img" />
+
+          <div class="p-6">
+            <h3 class="text-xl font-bold group-hover:text-cyan-400 transition">
+              {{ project.title }}
+            </h3>
+
+            <p class="text-gray-400 mt-2 text-sm">
+              {{ project.description }}
+            </p>
+
+            <a :href="project.link" target="_blank" class="project-link">
+              View →
             </a>
           </div>
+
         </div>
+
       </div>
     </section>
 
-    <!-- Skills -->
-    <section class="py-20 px-6 bg-white w-full">
-      <h2 class="text-4xl lg:text-5xl font-extrabold text-center mb-12 text-amber-600">Skills</h2>
-      <div class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-        <div
-          v-for="(skill, index) in skills"
-          :key="index"
-          class="flex items-center bg-slate-800 px-6 py-3 rounded-full text-white text-lg shadow-sm"
-        >
-          <img :src="skill.icon" :alt="skill.name" class="w-5 h-5 mr-2" />
+    <!-- SKILLS -->
+    <section class="py-20 px-6 bg-[#0f172a]">
+      <h2 class="section-title text-center">Tech Stack</h2>
+
+      <div class="flex flex-wrap justify-center gap-4 mt-10">
+        <div v-for="skill in skills"
+             :key="skill.name"
+             class="skill-pill">
+
+          <img :src="skill.icon" class="w-5 mr-2"/>
           {{ skill.name }}
+
         </div>
       </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="py-20 px-6 bg-slate-50 w-full">
-      <h2 class="text-4xl lg:text-5xl font-extrabold text-center mb-12 text-amber-600">Services</h2>
-      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-        <div v-for="(service, index) in services" :key="index" class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-2xl font-bold text-slate-900 mb-3">{{ service.title }}</h3>
-          <p class="text-gray-600 text-base">{{ service.description }}</p>
+    <!-- SERVICES -->
+    <section class="py-20 px-6">
+      <h2 class="section-title text-center">Services</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-12">
+
+        <div v-for="service in services"
+             :key="service.title"
+             class="glass-card">
+
+          <h3 class="text-xl font-bold text-cyan-400">
+            {{ service.title }}
+          </h3>
+
+          <p class="text-gray-400 mt-3">
+            {{ service.description }}
+          </p>
+
         </div>
+
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="py-20 px-6 bg-white text-center w-full">
-      <h2 class="text-4xl lg:text-5xl font-extrabold mb-6 text-amber-600">Let’s Work Together</h2>
-      <p class="text-lg text-gray-700 mb-8">
-        Interested in collaborating or hiring me? I’m just an email away.
-      </p>
-      <!-- <a href="mailto:your.email@example.com" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
-        Contact Me
-      </a> -->
-    </section>
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 px-6 bg-[#0f172a]">
+      <h2 class="section-title text-center">Contact Me</h2>
 
-  <section id="contact" class="py-20 bg-slate-50 text-slate-700 w-full">
-    <div class="container mx-auto px-6 lg:px-20">
-      <h2 class="text-4xl font-bold mb-8 text-center">Contact Me</h2>
+      <form @submit.prevent="handleSubmit"
+            class="max-w-2xl mx-auto mt-10 glass-card space-y-6">
 
-      <form
-        @submit.prevent="handleSubmit"
-        class="max-w-2xl mx-auto border border-gray-400 p-8 rounded-2xl shadow-lg space-y-6"
-      >
-        <!-- Name -->
-        <div>
-          <label for="name" class="block text-sm font-semibold mb-2">Name</label>
-          <input
-            id="name"
-            name="name"
-            v-model="form.name"
-            type="text"
-            placeholder="Your name"
-            required
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
-          />
-        </div>
+        <input v-model="form.name" placeholder="Name" class="input"/>
+        <input v-model="form.email" placeholder="Email" class="input"/>
+        <textarea v-model="form.message" rows="5" placeholder="Message" class="input"/>
 
-        <!-- Email -->
-        <div>
-          <label for="email" class="block text-sm font-semibold mb-2">Email</label>
-          <input
-            id="email"
-            name="email"
-            v-model="form.email"
-            type="email"
-            placeholder="you@example.com"
-            required
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
-          />
-        </div>
+        <button class="btn-primary w-full">
+          {{ loading ? "Sending..." : "Send Message" }}
+        </button>
 
-        <!-- Message -->
-        <div>
-          <label for="message" class="block text-sm font-semibold mb-2">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            v-model="form.message"
-            rows="5"
-            placeholder="Write your message..."
-            required
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
-          ></textarea>
-        </div>
+        <p v-if="success" class="text-green-400 text-center">Message sent!</p>
+        <p v-if="error" class="text-red-400 text-center">Error sending message</p>
 
-        <!-- Button -->
-        <div class="text-center">
-          <button
-            type="submit"
-            :disabled="loading"
-            class="px-8 py-3 bg-amber-600 hover:bg-amber-700 rounded-full text-white font-semibold shadow-md transition disabled:opacity-50"
-          >
-            {{ loading ? "Sending..." : "Send Message" }}
-          </button>
-        </div>
-
-        <!-- Success / Error Messages -->
-        <p v-if="success" class="text-green-600 text-center mt-4">
-          ✅ Message sent successfully!
-        </p>
-        <p v-if="error" class="text-red-600 text-center mt-4">
-          ❌ Oops! Something went wrong. Please try again.
-        </p>
       </form>
-    </div>
-  </section>
+    </section>
 
   </div>
 </template>
 
 <script setup>
-import { reactive, onMounted } from "vue";
+import { reactive, ref, onMounted } from "vue";
 
-import { ref } from "vue";
-
-const form = ref({
-  name: "",
-  email: "",
-  message: "",
-});
-
+const form = ref({ name: "", email: "", message: "" });
 const loading = ref(false);
 const success = ref(false);
 const error = ref(false);
 
-// replace with your Formspree endpoint
 const FORMSPREE_URL = "https://formspree.io/f/xnnbwypj";
 
 const handleSubmit = async () => {
   loading.value = true;
-  success.value = false;
-  error.value = false;
-
   try {
-    const response = await fetch(FORMSPREE_URL, {
+    const res = await fetch(FORMSPREE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form.value),
     });
 
-    if (response.ok) {
-      success.value = true;
-      form.value = { name: "", email: "", message: "" }; // reset form
-    } else {
-      error.value = true;
-    }
-  } catch (err) {
+    success.value = res.ok;
+    error.value = !res.ok;
+  } catch {
     error.value = true;
-  } finally {
-    loading.value = false;
   }
+  loading.value = false;
 };
 
 const state = reactive({
   projects: [
     {
       title: "Construction Management App",
-      description: "Full-stack system with RBAC, project tracking, and role management.",
+      description: "RBAC, project tracking, role system",
       image: "/construction.png",
       link: "https://github.com/ChileKasoka/csm",
     },
     {
-      title: "Electronic Supply Chain Management Information System USAID",
-      description: "tracks orders, inventory, and suppliers with real-time updates.",
-      image: "/elmis.png",
+      title: "USAID Supply Chain System",
+      description: "Inventory + supplier tracking",
+      image: "/DHIS2.png",
       link: "https://zm-elmis.org/",
     },
     {
-      title: "Appointment Booking System",
-      description: "Appointment scheduling with email notifications and calendar integration.",
-      image: "/book.png",
-      link: "https://github.com/yourrepo/budget",
+      title: "Church Management System",
+      description: "ERP for church operations",
+      image: "/shield.png",
+      link: "https://sci-eld.org/",
     },
   ],
 });
 
 const skills = [
   { name: "Vue.js", icon: "/icons/vue.svg" },
-  { name: "React", icon: "/icons/reactjs.svg" },
   { name: "Golang", icon: "/icons/golang.svg" },
-  { name: "Spring Boot", icon: "/icons/spring.svg" },
-  { name: "Node.js", icon: "/icons/node.svg" },
   { name: "PostgreSQL", icon: "/icons/psql.svg" },
-  { name: "Flutter", icon: "/icons/flutter.svg" },
   { name: "Docker", icon: "/icons/docker.svg" },
-  { name: "Linux", icon: "/icons/linux.svg" },
-  { name: "AWS", icon: "/icons/aws.svg" },
 ];
 
 const services = [
-  { 
-    title: "Web Development", 
-    description: "Building scalable, responsive, and modern web apps tailored to client needs." 
-  },
-  { 
-    title: "Backend APIs", 
-    description: "Designing and implementing secure, high-performance REST APIs." 
-  },
-  { 
-    title: "Database Design", 
-    description: "Efficient schema design and optimization for PostgreSQL & SQL-based systems." 
-  },
-  { 
-    title: "Networking", 
-    description: "Setting up, managing, and troubleshooting networks for reliable connectivity." 
-  },
-  { 
-    title: "Cloud Infrastructure", 
-    description: "Deploying and managing scalable cloud environments using AWS, Azure, or GCP." 
-  },
-  { 
-    title: "IT Support & Troubleshooting", 
-    description: "Providing technical support, diagnosing issues, and ensuring systems run smoothly." 
-  }
+  { title: "Web Development", description: "Modern apps" },
+  { title: "Backend APIs", description: "Secure + scalable" },
+  { title: "Cloud", description: "Deployments + infra" },
 ];
-
 
 const animateCounter = (id, target) => {
   let count = 0;
@@ -319,7 +235,7 @@ const animateCounter = (id, target) => {
     count++;
     document.getElementById(id).innerText = count;
     if (count >= target) clearInterval(interval);
-  }, 50);
+  }, 40);
 };
 
 onMounted(() => {
@@ -334,5 +250,55 @@ onMounted(() => {
 
 .font-coder {
   font-family: 'Press Start 2P', cursive;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 font-semibold shadow-lg hover:scale-105 transition;
+}
+
+.btn-outline {
+  @apply px-6 py-3 rounded-full border border-gray-500 hover:border-cyan-400 transition;
+}
+
+/* Cards */
+.glass-card {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-xl;
+}
+
+.project-card {
+  @apply bg-[#111827] rounded-2xl overflow-hidden border border-white/10 hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] transition;
+}
+
+.project-img {
+  @apply w-full h-48 object-cover;
+}
+
+.project-link {
+  @apply inline-block mt-4 text-cyan-400 hover:underline;
+}
+
+/* Skills */
+.skill-pill {
+  @apply flex items-center px-5 py-2 rounded-full bg-white/5 border border-white/10 text-sm hover:bg-cyan-500/20 transition;
+}
+
+/* Stats */
+.stat-card {
+  @apply bg-white/5 border border-white/10 p-6 rounded-xl text-center;
+}
+
+.stat-number {
+  @apply text-3xl font-bold text-cyan-400;
+}
+
+/* Inputs */
+.input {
+  @apply w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-400;
+}
+
+/* Titles */
+.section-title {
+  @apply text-3xl lg:text-5xl font-extrabold text-cyan-400;
 }
 </style>
