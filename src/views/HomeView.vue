@@ -42,7 +42,7 @@
       <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
         <div>
-          <h2 class="section-title">About Me</h2>
+          <h2 class="section-title text-sm">About Me</h2>
           <h3 class="text-3xl lg:text-5xl font-bold mt-4 text-cyan-400 font-coder">
             Design. Code. Deliver.
           </h3>
@@ -71,6 +71,66 @@
 
       </div>
     </section>
+
+    <!-- EXPERIENCE -->
+<section id="experience" class="py-20 px-6 bg-[#0b0f19]">
+  <h2 class="section-title text-center">Experience</h2>
+
+  <div class="relative max-w-5xl mx-auto mt-16">
+
+    <!-- vertical line -->
+    <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-cyan-400 to-purple-500"></div>
+
+    <div class="space-y-12">
+
+      <div
+        v-for="(job, index) in experiences"
+        :key="index"
+        class="relative flex flex-col md:flex-row items-start md:items-center"
+      >
+
+        <!-- dot -->
+        <div class="absolute left-2 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.8)]"></div>
+
+        <!-- card -->
+        <div
+          class="ml-10 md:ml-0 md:w-1/2"
+          :class="index % 2 === 0 ? 'md:pr-10 md:text-right' : 'md:pl-10 md:ml-auto'"
+        >
+          <div class="glass-card hover:scale-[1.02] transition duration-300">
+
+            <h3 class="text-xl font-bold text-cyan-400">
+              {{ job.role }}
+            </h3>
+
+            <p class="text-sm text-gray-400 mt-1">
+              {{ job.company }} • {{ job.period }}
+            </p>
+
+            <p class="text-gray-300 mt-4 text-sm leading-relaxed">
+              {{ job.description }}
+            </p>
+
+            <!-- tech stack -->
+            <div class="flex flex-wrap gap-2 mt-4"
+                 :class="index % 2 === 0 ? 'md:justify-end' : ''">
+              <span
+                v-for="tech in job.tech"
+                :key="tech"
+                class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full"
+              >
+                {{ tech }}
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- PROJECTS -->
     <section class="py-20 px-6">
@@ -192,6 +252,33 @@ const handleSubmit = async () => {
   }
   loading.value = false;
 };
+
+const experiences = [
+  {
+    role: "Software Developer",
+    company: "Freelance / Personal Projects",
+    period: "2023 - Present",
+    description:
+      "Building scalable full-stack applications using Golang, Vue.js, and PostgreSQL. Designed RBAC systems, project management tools, and real-world production-ready APIs.",
+    tech: ["Golang", "Vue.js", "PostgreSQL", "Docker"],
+  },
+  {
+    role: "Systems Developer",
+    company: "USAID Supply Chain System (eLMIS)",
+    period: "2024",
+    description:
+      "Worked on supply chain systems handling inventory, orders, and supplier tracking with real-time updates and data reliability.",
+    tech: ["DHIS2", "APIs", "Data Systems"],
+  },
+  {
+    role: "IT Support / Networking",
+    company: "Various Organizations",
+    period: "2022 - 2023",
+    description:
+      "Handled network setup, troubleshooting, and infrastructure support ensuring reliable connectivity and system uptime.",
+    tech: ["Networking", "Linux", "Troubleshooting"],
+  },
+];
 
 const state = reactive({
   projects: [
