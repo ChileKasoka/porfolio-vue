@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-900 text-gray-200 py-8 font-coder">
+  <footer class="min-h-screen bg-gray-900 text-gray-200 py-8 font-coder">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <!-- Branding -->
       <div class="mb-4 md:mb-0 text-center md:text-left">

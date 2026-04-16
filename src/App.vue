@@ -1,7 +1,7 @@
 <template>
-  <HeaderComponent/>
+  <!-- <HeaderComponent/> -->
     <router-view />
-  <FooterView/>
+  
 </template>
 
 <script setup>
