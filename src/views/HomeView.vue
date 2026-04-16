@@ -36,7 +36,7 @@
       </div>
 
       <!-- Footer -->
-      <div class="text-xs text-gray-500 text-center">
+      <div class="text-xs text-gray-500 text-left">
         © {{ new Date().getFullYear() }}
       </div>
 
