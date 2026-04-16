@@ -14,7 +14,7 @@
           />
 
           <h2 class="mt-4 text-xl font-bold">Chile</h2>
-          <p class="text-gray-400 text-sm">Backend Developer</p>
+          <p class="text-gray-400 text-sm">COMPUTER SYSTEMS ENGINEER</p>
 
         </div>
 
@@ -77,12 +77,14 @@
           <span class="gradient-text">Chile</span>
         </h1>
 
-        <p class="mt-6 text-gray-300 w-full">
-          I’m a backend-focused software developer specializing in building scalable systems, 
-          high-performance APIs, and real-world applications using Spring boot (Java), and Golang and modern web technologies. 
-          I enjoy designing clean architectures, implementing robust role-based access control systems, 
-          and turning complex business requirements into efficient, maintainable solutions.
-        </p>
+<p class="mt-6 text-gray-300 w-full leading-relaxed">
+  I’m a Computer Systems Engineer with experience across software development, cloud, database management, networking, and IT systems. 
+  I build scalable applications and APIs using Spring Boot (Java), Golang, and modern web technologies, 
+  while also working with system infrastructure, troubleshooting, and network environments.  
+  <br /><br />
+  I focus on designing efficient, secure, and reliable solutions—whether it’s developing backend systems, 
+  optimizing performance, or supporting real-world IT operations.
+</p>
         <SocialMedia/>
         <div class="mt-8 flex gap-4">
           <a href="#contact" class="btn-primary">Hire Me</a>
@@ -97,16 +99,19 @@
   <h2 class="section-title">About</h2>
 
 <p class="text-gray-300 mt-6 max-w-3xl leading-relaxed">
-  I’m a backend-focused software developer with over <span class="text-cyan-400 font-semibold">4+ years of experience</span> 
-  building scalable systems, APIs, and real-world applications. I specialize in modern web technologies, 
-  focusing on performance, clean architecture, and reliability.
+  I’m a Computer Systems Engineer and backend-focused software developer with over 
+  <span class="text-cyan-400 font-semibold">4+ years of experience</span> building scalable systems, 
+  high-performance APIs, and real-world applications. I specialize in Spring Boot (Java), Golang, 
+  and modern web technologies, with a strong focus on performance, clean architecture, and reliability.
   <br /><br />
-  I’ve worked on systems ranging from supply chain platforms to full-stack applications, implementing features like 
-  role-based access control (RBAC), project management tools, and production-ready APIs. My goal is to turn complex 
-  requirements into simple, efficient, and maintainable solutions.
+  I’ve worked on systems ranging from supply chain platforms to full-stack applications, implementing 
+  solutions such as role-based access control (RBAC), project management systems, and production-ready APIs. 
+  My approach is centered on transforming complex business requirements into efficient, maintainable, 
+  and scalable systems.
   <br /><br />
-  Beyond coding, I enjoy solving real-world problems, optimizing systems, and continuously improving my craft 
-  to build software that scales and lasts.
+  With a strong foundation in systems engineering, I think beyond just code—focusing on how systems behave, 
+  scale, and integrate in real-world environments. I’m driven by solving meaningful problems and building 
+  software that is robust, efficient, and built to last.
 </p>
 
   <!-- STATS -->
