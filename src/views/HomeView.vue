@@ -79,7 +79,7 @@
 
         <p class="mt-6 text-gray-300 w-full">
           I’m a backend-focused software developer specializing in building scalable systems, 
-          high-performance APIs, and real-world applications using Golang and modern web technologies. 
+          high-performance APIs, and real-world applications using Spring boot (Java), and Golang and modern web technologies. 
           I enjoy designing clean architectures, implementing robust role-based access control systems, 
           and turning complex business requirements into efficient, maintainable solutions.
         </p>
@@ -96,9 +96,18 @@
 
   <h2 class="section-title">About</h2>
 
-  <p class="text-gray-300 mt-6 max-w-3xl">
-    I specialize in backend systems, building scalable APIs and real-world solutions.
-  </p>
+<p class="text-gray-300 mt-6 max-w-3xl leading-relaxed">
+  I’m a backend-focused software developer with over <span class="text-cyan-400 font-semibold">4+ years of experience</span> 
+  building scalable systems, APIs, and real-world applications. I specialize in modern web technologies, 
+  focusing on performance, clean architecture, and reliability.
+  <br /><br />
+  I’ve worked on systems ranging from supply chain platforms to full-stack applications, implementing features like 
+  role-based access control (RBAC), project management tools, and production-ready APIs. My goal is to turn complex 
+  requirements into simple, efficient, and maintainable solutions.
+  <br /><br />
+  Beyond coding, I enjoy solving real-world problems, optimizing systems, and continuously improving my craft 
+  to build software that scales and lasts.
+</p>
 
   <!-- STATS -->
   <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 max-w-2xl">
