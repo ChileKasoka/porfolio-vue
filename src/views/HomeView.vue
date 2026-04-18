@@ -13,29 +13,28 @@
             class="w-32 h-32 rounded-full border-4 border-cyan-500/40 shadow-[0_0_40px_rgba(34,211,238,0.4)]"
           />
 
-          <h2 class="mt-4 text-xl font-bold">Chile</h2>
+          <h2 class="mt-4 text-xl font-bold">Chilekesha Kasoka</h2>
           <p class="text-gray-400 text-sm">COMPUTER SYSTEMS ENGINEER</p>
 
         </div>
 
         <!-- NAV -->
-      <nav class="mt-10 space-y-4">
-        <a
-          v-for="link in links"
-          :key="link.href"
-          @click.prevent="scrollToSection(link.href)"
-          :href="link.href"
-          :class="[
-            'sidebar-link',
-            activeSection === link.href ? 'sidebar-active' : ''
-          ]"
-        >
-          {{ link.text }}
-        </a>
-      </nav>
+        <nav class="mt-10 space-y-4">
+          <a
+            v-for="link in links"
+            :key="link.href"
+            @click.prevent="scrollToSection(link.href)"
+            :href="link.href"
+            :class="[
+              'sidebar-link',
+              activeSection === link.href ? 'sidebar-active' : ''
+            ]"
+          >
+            {{ link.text }}
+          </a>
+        </nav>
       </div>
 
-      <!-- Footer -->
       <div class="text-xs text-gray-500 text-left">
         © {{ new Date().getFullYear() }}
       </div>
@@ -45,47 +44,51 @@
     <!-- MOBILE TOP BAR -->
     <div class="lg:hidden fixed top-0 w-full bg-[#0f172a] border-b border-white/10 p-4 flex justify-between z-50">
       <span class="font-bold">$ ck</span>
-
-      <button @click="toggleMenu">
-        ☰
-      </button>
+      <button @click="toggleMenu">☰</button>
     </div>
 
     <!-- MOBILE MENU -->
     <div v-if="isMenuOpen"
          class="lg:hidden fixed inset-0 bg-black/80 backdrop-blur-md flex flex-col items-center justify-center space-y-6 z-50">
 
-      <a v-for="link in links"
-         :key="link.href"
-         @click="scrollToSection(link.href); toggleMenu()"
-         class="text-xl">
-
+      <a
+        v-for="link in links"
+        :key="link.href"
+        @click="scrollToSection(link.href); toggleMenu()"
+        class="text-xl"
+      >
         {{ link.text }}
-
       </a>
 
     </div>
 
-    <!-- MAIN CONTENT -->
-    <main class="w-full lg:ml-72">
+    <!-- MAIN -->
+    <main class="w-full lg:ml-72 bg-white text-gray-900 dark:bg-[#0b0f19] dark:text-white transition-colors duration-300">
+
+      <!-- THEME TOGGLE -->
+      <div class="fixed top-6 right-6 z-50">
+        <button
+          @click="toggleTheme"
+          class="px-4 py-2 rounded-full bg-gray-200 dark:bg-[#1e293b] text-sm font-semibold shadow hover:scale-105 transition"
+        >
+          {{ isDark ? "☀️ Light" : "🌙 Dark" }}
+        </button>
+      </div>
 
       <!-- HERO -->
       <section id="home" class="min-h-screen px-6 flex flex-col justify-center">
 
         <h1 class="text-5xl lg:text-7xl font-extrabold">
-          Hi, I’m 
-          <span class="gradient-text">Chile</span>
+          Hi, I’m <span class="gradient-text">Chile</span>
         </h1>
 
-<p class="mt-6 text-gray-300 w-full leading-relaxed">
-  I’m a Computer Systems Engineer with experience across software development, cloud, database management, networking, and IT systems. 
-  I build scalable applications and APIs using Spring Boot (Java), Golang, and modern web technologies, 
-  while also working with system infrastructure, troubleshooting, and network environments.  
-  <br /><br />
-  I focus on designing efficient, secure, and reliable solutions—whether it’s developing backend systems, 
-  optimizing performance, or supporting real-world IT operations.
-</p>
-        <SocialMedia/>
+        <p class="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+          I’m a Computer Systems Engineer with experience across software development, cloud systems, networking, databases, and IT support.
+          I build scalable applications and APIs using Spring Boot (Java), Golang, and modern web technologies while also working with infrastructure and system operations.
+        </p>
+
+        <SocialMedia />
+
         <div class="mt-8 flex gap-4">
           <a href="#contact" class="btn-primary">Hire Me</a>
           <a href="/Chilekesha_Kasoka_CV_2026.pdf" download class="btn-outline">CV</a>
@@ -94,91 +97,105 @@
       </section>
 
       <!-- ABOUT -->
-<section id="about" class="min-h-screen px-6 flex flex-col justify-center">
+      <section id="about" class="min-h-screen px-6 flex flex-col justify-center">
 
-  <h2 class="section-title">About</h2>
+        <h2 class="section-title">About</h2>
 
-<p class="text-gray-300 mt-6 max-w-3xl leading-relaxed">
-  I’m a Computer Systems Engineer and backend-focused software developer with over 
-  <span class="text-cyan-400 font-semibold">4+ years of experience</span> building scalable systems, 
-  high-performance APIs, and real-world applications. I specialize in Spring Boot (Java), Golang, 
-  and modern web technologies, with a strong focus on performance, clean architecture, and reliability.
-  <br /><br />
-  I’ve worked on systems ranging from supply chain platforms to full-stack applications, implementing 
-  solutions such as role-based access control (RBAC), project management systems, and production-ready APIs. 
-  My approach is centered on transforming complex business requirements into efficient, maintainable, 
-  and scalable systems.
-  <br /><br />
-  With a strong foundation in systems engineering, I think beyond just code—focusing on how systems behave, 
-  scale, and integrate in real-world environments. I’m driven by solving meaningful problems and building 
-  software that is robust, efficient, and built to last.
-</p>
+        <p class="text-gray-700 dark:text-gray-300 mt-6 max-w-3xl leading-relaxed">
+          I’m a Computer Systems Engineer with over
+          <span class="text-cyan-500 dark:text-cyan-400 font-semibold">4+ years of experience</span>
+          working across software development, IT support, networking, and systems engineering.
+          <br /><br />
+          My work spans backend systems, cloud infrastructure, APIs, databases, and troubleshooting real-world IT environments.
+          I specialize in building reliable, scalable, and secure systems that perform under production demands.
+        </p>
 
-  <!-- STATS -->
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 max-w-2xl">
+        <!-- STATS -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 max-w-2xl">
 
-    <div class="stat-card">
-      <p id="projects-complete" class="stat-number">0</p>
-      <span class="text-gray-400 text-sm">Projects</span>
-    </div>
+          <div class="stat-card">
+            <p id="projects-complete" class="stat-number">0</p>
+            <span class="text-gray-500 dark:text-gray-400 text-sm">Projects</span>
+          </div>
 
-    <div class="stat-card">
-      <p id="experience" class="stat-number">0</p>
-      <span class="text-gray-400 text-sm">Years</span>
-    </div>
+          <div class="stat-card">
+            <p id="experience-years" class="stat-number">0</p>
+            <span class="text-gray-500 dark:text-gray-400 text-sm">Years</span>
+          </div>
 
-    <div class="stat-card col-span-2 md:col-span-1">
-      <p id="clients" class="stat-number">0</p>
-      <span class="text-gray-400 text-sm">Clients</span>
-    </div>
+          <div class="stat-card">
+            <p id="clients" class="stat-number">0</p>
+            <span class="text-gray-500 dark:text-gray-400 text-sm">Clients</span>
+          </div>
 
-  </div>
+        </div>
 
-</section>
+      </section>
 
       <!-- EXPERIENCE -->
       <section id="experience" class="min-h-screen px-6">
+
         <h2 class="section-title">Experience</h2>
 
         <div class="mt-10 space-y-6">
-          <div v-for="job in experiences"
-               :key="job.role"
-               class="glass-card">
+          <div
+            v-for="(job, index) in experiences"
+            :key="job.role + index"
+            class="glass-card"
+          >
+            <h3 class="text-cyan-500 dark:text-cyan-400 font-bold">
+              {{ job.role }}
+            </h3>
 
-            <h3 class="text-cyan-400 font-bold">{{ job.role }}</h3>
-            <p class="text-sm text-gray-400">{{ job.company }} • {{ job.period }}</p>
-            <p class="mt-3 text-gray-300 text-sm">{{ job.description }}</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              {{ job.company }} • {{ job.period }}
+            </p>
+
+            <p class="mt-3 text-gray-700 dark:text-gray-300 text-sm">
+              {{ job.description }}
+            </p>
 
           </div>
         </div>
+
       </section>
 
       <!-- PROJECTS -->
       <section id="projects" class="px-6 min-h-screen">
+
         <h2 class="section-title">Projects</h2>
 
         <div class="grid md:grid-cols-2 gap-8 mt-10">
-          <div v-for="project in state.projects"
-               :key="project.title"
-               class="project-card">
 
+          <div
+            v-for="(project, index) in state.projects"
+            :key="index"
+            class="project-card"
+          >
             <img :src="project.image" class="project-img" />
 
             <div class="p-4">
-              <h3 class="font-bold">{{ project.title }}</h3>
-              <p class="text-sm text-gray-400 mt-2">{{ project.description }}</p>
+              <h3 class="font-bold">
+                {{ project.title }}
+              </h3>
+
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                {{ project.description }}
+              </p>
             </div>
 
           </div>
+
         </div>
+
       </section>
 
       <!-- CONTACT -->
-      <section id="contact" class="min-h-screen flex flex-col justify-center items-center">
+      <section id="contact" class="min-h-screen flex flex-col justify-center items-center px-6">
+
         <h2 class="section-title">Contact</h2>
 
-        <form @submit.prevent="handleSubmit"
-              class="max-w-xl mt-8 space-y-4">
+        <form @submit.prevent="handleSubmit" class="max-w-xl mt-8 space-y-4 w-full">
 
           <input v-model="form.name" placeholder="Name" class="input"/>
           <input v-model="form.email" placeholder="Email" class="input"/>
@@ -189,54 +206,90 @@
           </button>
 
         </form>
+
       </section>
-<FooterView/>
+
+      <FooterView />
+
     </main>
   </div>
 </template>
 
 <script setup>
-import { reactive, ref, onMounted, onUnmounted } from "vue";
+import { ref, reactive, onMounted, onUnmounted } from "vue";
 import FooterView from "../components/FooterView.vue";
 import SocialMedia from "../components/SocialMedia.vue";
 
 /* =========================
-   CONTACT FORM
+   THEME
+========================= */
+const isDark = ref(true);
+
+const toggleTheme = () => {
+  isDark.value = !isDark.value;
+
+  const html = document.documentElement;
+
+  if (isDark.value) {
+    html.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    html.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+};
+
+/* =========================
+   INIT THEME + LIFE CYCLE
+========================= */
+onMounted(() => {
+  const saved = localStorage.getItem("theme");
+
+  if (saved === "light") {
+    isDark.value = false;
+    document.documentElement.classList.remove("dark");
+  } else {
+    isDark.value = true;
+    document.documentElement.classList.add("dark");
+  }
+
+  window.addEventListener("scroll", handleScroll);
+
+  animateCounter("projects-complete", 12);
+  animateCounter("experience-years", 4);
+  animateCounter("clients", 5);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
+
+/* =========================
+   FORM
 ========================= */
 const form = ref({ name: "", email: "", message: "" });
 const loading = ref(false);
-const success = ref(false);
-const error = ref(false);
 
 const FORMSPREE_URL = "https://formspree.io/f/xnnbwypj";
 
 const handleSubmit = async () => {
   loading.value = true;
-  success.value = false;
-  error.value = false;
 
   try {
-    const res = await fetch(FORMSPREE_URL, {
+    await fetch(FORMSPREE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form.value),
     });
 
-    if (res.ok) {
-      success.value = true;
-      form.value = { name: "", email: "", message: "" };
-    } else {
-      error.value = true;
-    }
-  } catch {
-    error.value = true;
+    form.value = { name: "", email: "", message: "" };
   } finally {
     loading.value = false;
   }
 };
 
 /* =========================
-   NAVIGATION (SIDEBAR)
+   NAV
 ========================= */
 const links = [
   { text: "Home", href: "#home" },
@@ -249,34 +302,28 @@ const links = [
 const activeSection = ref("#home");
 const isMenuOpen = ref(false);
 
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
+const toggleMenu = () => (isMenuOpen.value = !isMenuOpen.value);
 
-/* Smooth scroll with offset (important for fixed sidebar/top) */
 const scrollToSection = (hash) => {
   const el = document.querySelector(hash);
   if (!el) return;
 
-  const offset = 80; // adjust if needed
-  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+  const top = el.getBoundingClientRect().top + window.scrollY - 80;
 
-  window.scrollTo({
-    top,
-    behavior: "smooth",
-  });
+  window.scrollTo({ top, behavior: "smooth" });
 };
 
 /* =========================
-   SCROLL SPY (🔥 important)
+   SCROLL SPY
 ========================= */
 const handleScroll = () => {
-  const sections = links.map((l) => document.querySelector(l.href));
+  const sections = links.map(l => document.querySelector(l.href));
 
   for (let sec of sections) {
     if (!sec) continue;
 
     const rect = sec.getBoundingClientRect();
+
     if (rect.top <= 120 && rect.bottom >= 120) {
       activeSection.value = `#${sec.id}`;
       break;
@@ -285,80 +332,16 @@ const handleScroll = () => {
 };
 
 /* =========================
-   DATA
-========================= */
-const experiences = [
-  {
-    role: "Software Developer",
-    company: "Freelance / Personal Projects",
-    period: "2023 - Present",
-    description:
-      "Building scalable full-stack applications using Golang, Vue.js, and PostgreSQL. Designed RBAC systems, project management tools, and production-ready APIs.",
-    tech: ["Golang", "Vue.js", "PostgreSQL", "Docker"],
-  },
-  {
-    role: "Systems Developer",
-    company: "USAID Supply Chain System (eLMIS)",
-    period: "2024",
-    description:
-      "Worked on supply chain systems handling inventory, orders, and supplier tracking with real-time updates.",
-    tech: ["DHIS2", "APIs", "Data Systems"],
-  },
-  {
-    role: "IT Support / Networking",
-    company: "Various Organizations",
-    period: "2022 - 2023",
-    description:
-      "Managed networks, troubleshooting, and infrastructure ensuring system uptime and reliability.",
-    tech: ["Networking", "Linux", "Troubleshooting"],
-  },
-];
-
-const state = reactive({
-  projects: [
-    {
-      title: "Construction Management App",
-      description: "RBAC, project tracking, role system",
-      image: "/construction.png",
-      link: "https://github.com/ChileKasoka/csm",
-    },
-    {
-      title: "USAID Supply Chain System",
-      description: "Inventory + supplier tracking",
-      image: "/DHIS2.png",
-      link: "https://zm-elmis.org/",
-    },
-    {
-      title: "Church Management System",
-      description: "ERP for church operations",
-      image: "/shield.png",
-      link: "https://sci-eld.org/",
-    },
-  ],
-});
-
-const skills = [
-  { name: "Vue.js", icon: "/icons/vue.svg" },
-  { name: "Golang", icon: "/icons/golang.svg" },
-  { name: "PostgreSQL", icon: "/icons/psql.svg" },
-  { name: "Docker", icon: "/icons/docker.svg" },
-];
-
-const services = [
-  { title: "Web Development", description: "Modern apps" },
-  { title: "Backend APIs", description: "Secure + scalable APIs" },
-  { title: "Cloud", description: "Deployments & infrastructure" },
-];
-
-/* =========================
-   COUNTER ANIMATION
+   COUNTER
 ========================= */
 const animateCounter = (id, target) => {
   let count = 0;
-  const step = Math.ceil(target / 50);
+
+  const step = Math.ceil(target / 40);
 
   const interval = setInterval(() => {
     count += step;
+
     if (count >= target) {
       count = target;
       clearInterval(interval);
@@ -370,18 +353,45 @@ const animateCounter = (id, target) => {
 };
 
 /* =========================
-   LIFECYCLE
+   DATA
 ========================= */
-onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
+const experiences = [
+  {
+    role: "Software Developer",
+    company: "Computers for Africa",
+    period: "2025 - Present",
+    description:
+      "ERP systems, AWS deployments, and backend services for enterprise operations.",
+  },
+  {
+    role: "Software Systems Developer",
+    company: "USAID eLMIS",
+    period: "2023 - 2025",
+    description:
+      "Supply chain systems, APIs, and data integration platforms.",
+  },
+  {
+    role: "IT Support / Networking",
+    company: "Various Organizations",
+    period: "2022 - Present",
+    description:
+      "Networking, troubleshooting, and IT infrastructure support.",
+  },
+];
 
-  animateCounter("projects-complete", 12);
-  animateCounter("experience", 4);
-  animateCounter("clients", 5);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
+const state = reactive({
+  projects: [
+    {
+      title: "Construction App",
+      description: "RBAC system + project tracking",
+      image: "/construction.png",
+    },
+    {
+      title: "Supply Chain System",
+      description: "Inventory + logistics platform",
+      image: "/DHIS2.png",
+    },
+  ],
 });
 </script>
 
@@ -410,7 +420,7 @@ onUnmounted(() => {
 
 .btn-primary:hover {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 15px 35px rgba(34, 211, 238, 0.4);
+  box-shadow: 0 15px 35px rgba(159, 163, 163, 0.4);
 }
 
 .btn-primary:active {
