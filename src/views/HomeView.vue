@@ -42,25 +42,22 @@
     </aside>
 
     <!-- MOBILE TOP BAR -->
-<div class="lg:hidden fixed top-0 w-full bg-[#0f172a] border-b border-white/10 px-4 py-3 flex justify-between items-center z-50">
+<div class="lg:hidden fixed top-0 w-full bg-[#0f172a] border-b border-white/10 p-4 flex justify-between items-center z-50">
 
-  <span class="font-bold">$ ck</span>
+  <span class="font-bold text-white">$ ck</span>
 
   <div class="flex items-center gap-3">
 
     <!-- THEME TOGGLE -->
     <button
       @click="toggleTheme"
-      class="text-xs px-3 py-1 rounded-full 
-             bg-gray-200 dark:bg-[#1e293b] 
-             text-gray-900 dark:text-white 
-             font-semibold transition"
+      class="px-3 py-1 rounded-full bg-gray-200 dark:bg-[#1e293b] text-xs font-semibold text-gray-800 dark:text-white"
     >
       {{ isDark ? "☀️" : "🌙" }}
     </button>
 
-    <!-- MENU -->
-    <button @click="toggleMenu" class="text-lg">
+    <!-- MENU BUTTON -->
+    <button @click="toggleMenu" class="text-white text-xl">
       ☰
     </button>
 
@@ -69,19 +66,60 @@
 </div>
 
     <!-- MOBILE MENU -->
-    <div v-if="isMenuOpen"
-         class="lg:hidden fixed inset-0 bg-black/80 backdrop-blur-md flex flex-col items-center justify-center space-y-6 z-50">
+<!-- MOBILE OVERLAY -->
+<div
+  v-if="isMenuOpen"
+  class="lg:hidden fixed inset-0 bg-black/50 z-40"
+  @click="toggleMenu"
+></div>
 
+<!-- MOBILE SIDEBAR (SLIDE IN) -->
+<aside
+  class="lg:hidden fixed top-0 left-0 h-full w-72 bg-[#0f172a] border-r border-white/10 p-6 z-50 transform transition-transform duration-300"
+  :class="isMenuOpen ? 'translate-x-0' : '-translate-x-full'"
+>
+
+  <!-- Top -->
+  <div>
+    <div class="flex flex-col items-start text-left">
+
+      <img
+        src="/stunna.jpg"
+        class="w-24 h-24 rounded-full border-4 border-cyan-500/40 shadow-[0_0_30px_rgba(34,211,238,0.4)]"
+      />
+
+      <h2 class="mt-4 text-lg font-bold text-white">
+        Chilekesha Kasoka
+      </h2>
+
+      <p class="text-gray-400 text-sm">
+        COMPUTER SYSTEMS ENGINEER
+      </p>
+
+    </div>
+
+    <!-- NAV -->
+    <nav class="mt-10 space-y-4">
       <a
         v-for="link in links"
         :key="link.href"
         @click="scrollToSection(link.href); toggleMenu()"
-        class="text-xl"
+        :class="[
+          'sidebar-link',
+          activeSection === link.href ? 'sidebar-active' : ''
+        ]"
       >
         {{ link.text }}
       </a>
+    </nav>
+  </div>
 
-    </div>
+  <!-- Footer -->
+  <div class="text-xs text-gray-500 mt-10">
+    © {{ new Date().getFullYear() }}
+  </div>
+
+</aside>
 
     <!-- MAIN -->
 <main class="w-full lg:ml-72 pt-20 lg:pt-0
@@ -169,7 +207,7 @@
       </section>
 
       <!-- EXPERIENCE -->
-      <section id="experience" class="min-h-screen px-6">
+      <section id="experience" class="min-h-screen px-6 pt-24">
 
         <h2 class="section-title">Experience</h2>
 
