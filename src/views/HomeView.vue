@@ -169,34 +169,100 @@
       </section>
 
       <!-- PROJECTS -->
-      <section id="projects" class="px-6 min-h-screen">
+<section id="projects" class="px-6 min-h-screen flex flex-col justify-center">
 
-        <h2 class="section-title">Projects</h2>
+  <h2 class="section-title">Projects</h2>
 
-        <div class="grid md:grid-cols-2 gap-8 mt-10">
+<div
+  class="relative mt-10 max-w-5xl mx-auto w-full"
+  @mouseenter="stopAutoplay"
+  @mouseleave="startAutoplay"
+>
 
-          <div
-            v-for="(project, index) in state.projects"
-            :key="index"
-            class="project-card"
-          >
-            <img :src="project.image" class="project-img" />
+    <!-- CARD -->
+    <div class="project-card p-6 bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10">
 
-            <div class="p-4">
-              <h3 class="font-bold">
-                {{ project.title }}
-              </h3>
+      <img
+        :src="state.projects[currentProject].image"
+        class="project-img mb-6 rounded-xl"
+      />
 
-              <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                {{ project.description }}
-              </p>
-            </div>
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+        {{ state.projects[currentProject].title }}
+      </h3>
 
-          </div>
+      <p class="text-gray-600 dark:text-gray-300 mb-4">
+        {{ state.projects[currentProject].description }}
+      </p>
 
-        </div>
+      <!-- DETAILS -->
+      <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1 mb-4">
+        <li v-for="(point, i) in state.projects[currentProject].details" :key="i">
+          • {{ point }}
+        </li>
+      </ul>
 
-      </section>
+      <!-- TECH -->
+      <div class="flex flex-wrap gap-2 mt-4">
+        <span
+          v-for="(tech, i) in state.projects[currentProject].tech"
+          :key="i"
+          class="px-3 py-1 text-xs rounded-full border
+                 bg-cyan-500/10 text-cyan-600 dark:text-cyan-400
+                 border-cyan-300 dark:border-cyan-500/20"
+        >
+          {{ tech }}
+        </span>
+      </div>
+
+      <!-- LINK -->
+      <div class="mt-6">
+        <a
+          :href="state.projects[currentProject].link"
+          target="_blank"
+          class="btn-primary"
+        >
+          View Project
+        </a>
+      </div>
+
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="flex justify-between items-center mt-6">
+
+      <button
+        @click="prevProject"
+        class="btn-outline text-gray-700 dark:text-gray-300 border-gray-300 dark:border-white/20"
+      >
+        ← Prev
+      </button>
+
+      <!-- DOTS -->
+      <div class="flex gap-2">
+        <span
+          v-for="(p, i) in state.projects"
+          :key="i"
+          @click="currentProject = i"
+          class="w-3 h-3 rounded-full cursor-pointer transition"
+          :class="i === currentProject
+            ? 'bg-cyan-500'
+            : 'bg-gray-300 dark:bg-gray-600'"
+        ></span>
+      </div>
+
+      <button
+        @click="nextProject"
+        class="btn-outline text-gray-700 dark:text-gray-300 border-gray-300 dark:border-white/20"
+      >
+        Next →
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
 
       <!-- CONTACT -->
       <section id="contact" class="min-h-screen flex flex-col justify-center items-center px-6">
@@ -284,6 +350,7 @@ const toggleTheme = () => {
    INIT THEME + LIFE CYCLE
 ========================= */
 onMounted(() => {
+  // Theme
   const saved = localStorage.getItem("theme");
 
   if (saved === "light") {
@@ -294,15 +361,21 @@ onMounted(() => {
     document.documentElement.classList.add("dark");
   }
 
+  // Scroll spy
   window.addEventListener("scroll", handleScroll);
 
+  // Counters
   animateCounter("projects-complete", 12);
   animateCounter("experience-years", 4);
   animateCounter("clients", 5);
+
+  // Carousel autoplay
+  startAutoplay();
 });
 
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
+  stopAutoplay();
 });
 
 /* =========================
@@ -420,17 +493,77 @@ const experiences = [
   },
 ];
 
+const currentProject = ref(0);
+let interval = null;
+
+const nextProject = () => {
+  currentProject.value =
+    (currentProject.value + 1) % state.projects.length;
+};
+
+const prevProject = () => {
+  currentProject.value =
+    (currentProject.value - 1 + state.projects.length) %
+    state.projects.length;
+};
+
+const startAutoplay = () => {
+  stopAutoplay(); // prevent duplicates
+  interval = setInterval(() => {
+    nextProject();
+  }, 4000);
+};
+
+const stopAutoplay = () => {
+  if (interval) {
+    clearInterval(interval);
+    interval = null;
+  }
+};
+
 const state = reactive({
   projects: [
     {
-      title: "Construction App",
-      description: "RBAC system + project tracking",
+      title: "Construction Management App",
+      description:
+        "A full-scale system for managing construction projects, teams, and workflows.",
       image: "/construction.png",
+      link: "https://github.com/ChileKasoka/csm",
+      tech: ["Golang", "Vue.js", "PostgreSQL"],
+      details: [
+        "Role-based access control (RBAC) system",
+        "Project and task management",
+        "User-role assignment with permissions",
+        "RESTful API with scalable architecture",
+      ],
     },
     {
-      title: "Supply Chain System",
-      description: "Inventory + logistics platform",
+      title: "USAID Supply Chain System",
+      description:
+        "Enterprise supply chain platform for tracking inventory and suppliers.",
       image: "/DHIS2.png",
+      link: "https://zm-elmis.org/",
+      tech: ["Spring Boot", "PostgreSQL", "DHIS2"],
+      details: [
+        "Inventory and order tracking system",
+        "Real-time reporting dashboards",
+        "Data reliability and system optimization",
+        "Integration with national health systems",
+      ],
+    },
+    {
+      title: "Church Management System",
+      description:
+        "ERP-style system for managing church operations and administration.",
+      image: "/shield.png",
+      link: "https://sci-eld.org/",
+      tech: ["Vue.js", "Node.js", "MySQL"],
+      details: [
+        "Membership management",
+        "Finance and reporting modules",
+        "Role-based user system",
+        "Scalable multi-user system",
+      ],
     },
   ],
 });
@@ -531,7 +664,7 @@ const state = reactive({
    PROJECT CARDS
 ========================= */
 .project-card {
-  @apply bg-[#111827] rounded-2xl overflow-hidden border border-white/10 transition-all duration-300;
+  @apply rounded-2xl overflow-hidden transition-all duration-300;
 }
 
 .project-card:hover {
