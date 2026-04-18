@@ -42,10 +42,31 @@
     </aside>
 
     <!-- MOBILE TOP BAR -->
-    <div class="lg:hidden fixed top-0 w-full bg-[#0f172a] border-b border-white/10 p-4 flex justify-between z-50">
-      <span class="font-bold">$ ck</span>
-      <button @click="toggleMenu">☰</button>
-    </div>
+<div class="lg:hidden fixed top-0 w-full bg-[#0f172a] border-b border-white/10 px-4 py-3 flex justify-between items-center z-50">
+
+  <span class="font-bold">$ ck</span>
+
+  <div class="flex items-center gap-3">
+
+    <!-- THEME TOGGLE -->
+    <button
+      @click="toggleTheme"
+      class="text-xs px-3 py-1 rounded-full 
+             bg-gray-200 dark:bg-[#1e293b] 
+             text-gray-900 dark:text-white 
+             font-semibold transition"
+    >
+      {{ isDark ? "☀️" : "🌙" }}
+    </button>
+
+    <!-- MENU -->
+    <button @click="toggleMenu" class="text-lg">
+      ☰
+    </button>
+
+  </div>
+
+</div>
 
     <!-- MOBILE MENU -->
     <div v-if="isMenuOpen"
@@ -63,17 +84,24 @@
     </div>
 
     <!-- MAIN -->
-    <main class="w-full lg:ml-72 bg-white text-gray-900 dark:bg-[#0b0f19] dark:text-white transition-colors duration-300">
+<main class="w-full lg:ml-72 pt-20 lg:pt-0
+             bg-white text-gray-900 
+             dark:bg-[#0b0f19] dark:text-white 
+             transition-colors duration-300">
 
       <!-- THEME TOGGLE -->
-      <div class="fixed top-16 right-6 z-50">
-        <button
-          @click="toggleTheme"
-          class="px-4 py-2 rounded-full bg-gray-200 dark:bg-[#1e293b] text-sm font-semibold shadow hover:scale-105 transition"
-        >
-          {{ isDark ? "☀️ Light" : "🌙 Dark" }}
-        </button>
-      </div>
+<div class="hidden lg:block fixed top-16 right-6 z-50">
+  <button
+    @click="toggleTheme"
+    class="px-4 py-2 rounded-full 
+           bg-gray-200 dark:bg-[#1e293b] 
+           text-gray-900 dark:text-white 
+           text-sm font-semibold shadow 
+           hover:scale-105 transition"
+  >
+    {{ isDark ? "☀️" : "🌙" }}
+  </button>
+</div>
 
       <!-- HERO -->
       <section id="home" class="min-h-screen px-6 flex flex-col justify-center">
@@ -258,6 +286,117 @@
         Next →
       </button>
 
+    </div>
+
+  </div>
+
+</section>
+
+<section id="services" class="min-h-screen px-6 pt-24 flex flex-col justify-center">
+
+  <h2 class="section-title">Services</h2>
+
+  <p class="mt-4 text-gray-700 dark:text-gray-300 max-w-2xl">
+    I provide a wide range of IT and software solutions—from backend development and system design 
+    to networking, infrastructure, and technical support—helping businesses build, scale, and maintain reliable systems.
+  </p>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+
+    <!-- BACKEND -->
+    <div class="glass-card hover:scale-[1.02] transition">
+      <h3 class="text-xl font-bold text-cyan-500 dark:text-cyan-400">
+        Backend Development
+      </h3>
+      <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+        Building secure, scalable APIs and systems using Golang, Spring Boot, and modern architectures.
+      </p>
+      <ul class="mt-4 text-sm text-gray-500 dark:text-gray-400 space-y-1">
+        <li>• REST API Development</li>
+        <li>• RBAC & Authentication Systems</li>
+        <li>• Microservices Architecture</li>
+        <li>• Performance Optimization</li>
+      </ul>
+    </div>
+
+    <!-- FULL STACK -->
+    <div class="glass-card hover:scale-[1.02] transition">
+      <h3 class="text-xl font-bold text-cyan-500 dark:text-cyan-400">
+        Full Stack Development
+      </h3>
+      <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+        End-to-end application development with modern frontend and backend technologies.
+      </p>
+      <ul class="mt-4 text-sm text-gray-500 dark:text-gray-400 space-y-1">
+        <li>• Vue.js Frontend Apps</li>
+        <li>• System Integration</li>
+        <li>• Database Design</li>
+        <li>• Responsive UI/UX</li>
+      </ul>
+    </div>
+
+    <!-- CLOUD -->
+    <div class="glass-card hover:scale-[1.02] transition">
+      <h3 class="text-xl font-bold text-cyan-500 dark:text-cyan-400">
+        Cloud & DevOps
+      </h3>
+      <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+        Deploying and managing scalable applications in cloud environments.
+      </p>
+      <ul class="mt-4 text-sm text-gray-500 dark:text-gray-400 space-y-1">
+        <li>• AWS Deployment</li>
+        <li>• Docker & Containerization</li>
+        <li>• CI/CD Pipelines</li>
+        <li>• Server Configuration</li>
+      </ul>
+    </div>
+
+    <!-- NETWORKING -->
+    <div class="glass-card hover:scale-[1.02] transition">
+      <h3 class="text-xl font-bold text-cyan-500 dark:text-cyan-400">
+        Networking & Infrastructure
+      </h3>
+      <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+        Designing and maintaining reliable network systems and IT infrastructure.
+      </p>
+      <ul class="mt-4 text-sm text-gray-500 dark:text-gray-400 space-y-1">
+        <li>• LAN/WAN Setup</li>
+        <li>• Router & Switch Configuration</li>
+        <li>• Network Troubleshooting</li>
+        <li>• Security Configuration</li>
+      </ul>
+    </div>
+
+    <!-- IT SUPPORT -->
+    <div class="glass-card hover:scale-[1.02] transition">
+      <h3 class="text-xl font-bold text-cyan-500 dark:text-cyan-400">
+        IT Support & Maintenance
+      </h3>
+      <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+        Providing ongoing support to ensure systems run smoothly and efficiently.
+      </p>
+      <ul class="mt-4 text-sm text-gray-500 dark:text-gray-400 space-y-1">
+        <li>• System Troubleshooting</li>
+        <li>• Hardware & Software Support</li>
+        <li>• Performance Monitoring</li>
+        <li>• User Support & Training</li>
+      </ul>
+    </div>
+
+    <!-- DATABASE -->
+    <div class="glass-card hover:scale-[1.02] transition">
+      <h3 class="text-xl font-bold text-cyan-500 dark:text-cyan-400">
+        Database Management
+      </h3>
+      <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+        Designing, optimizing, and maintaining secure and efficient databases.
+      </p>
+      <ul class="mt-4 text-sm text-gray-500 dark:text-gray-400 space-y-1">
+        <li>• PostgreSQL / MySQL</li>
+        <li>• Query Optimization</li>
+        <li>• Data Modeling</li>
+        <li>• Backup & Recovery</li>
+      </ul>
     </div>
 
   </div>
