@@ -66,7 +66,7 @@
     <main class="w-full lg:ml-72 bg-white text-gray-900 dark:bg-[#0b0f19] dark:text-white transition-colors duration-300">
 
       <!-- THEME TOGGLE -->
-      <div class="fixed top-6 right-6 z-50">
+      <div class="fixed top-16 right-6 z-50">
         <button
           @click="toggleTheme"
           class="px-4 py-2 rounded-full bg-gray-200 dark:bg-[#1e293b] text-sm font-semibold shadow hover:scale-105 transition"
@@ -82,10 +82,14 @@
           Hi, I’m <span class="gradient-text">Chile</span>
         </h1>
 
-        <p class="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed">
-          I’m a Computer Systems Engineer with experience across software development, cloud systems, networking, databases, and IT support.
-          I build scalable applications and APIs using Spring Boot (Java), Golang, and modern web technologies while also working with infrastructure and system operations.
-        </p>
+    <p class="mt-6 text-gray-700 dark:text-gray-300 w-full leading-relaxed">
+      I’m a Computer Systems Engineer with experience across software development, cloud, database management, networking, and IT systems. 
+      I build scalable applications and APIs using Spring Boot (Java), Golang, and modern web technologies, 
+      while also working with system infrastructure, troubleshooting, and network environments.  
+      <br /><br />
+      I focus on designing efficient, secure, and reliable solutions—whether it’s developing backend systems, 
+      optimizing performance, or supporting real-world IT operations.
+    </p>
 
         <SocialMedia />
 
@@ -101,14 +105,18 @@
 
         <h2 class="section-title">About</h2>
 
-        <p class="text-gray-700 dark:text-gray-300 mt-6 max-w-3xl leading-relaxed">
-          I’m a Computer Systems Engineer with over
-          <span class="text-cyan-500 dark:text-cyan-400 font-semibold">4+ years of experience</span>
-          working across software development, IT support, networking, and systems engineering.
-          <br /><br />
-          My work spans backend systems, cloud infrastructure, APIs, databases, and troubleshooting real-world IT environments.
-          I specialize in building reliable, scalable, and secure systems that perform under production demands.
-        </p>
+    <p class="text-gray-700 dark:text-gray-300 mt-6 max-w-3xl leading-relaxed">
+      I’m a Computer Systems Engineer and backend-focused software developer with over 
+      <span class="text-cyan-500 dark:text-cyan-400 font-semibold">4+ years of experience</span> 
+      building scalable systems, high-performance APIs, and real-world applications. 
+      I specialize in Spring Boot (Java), Golang, and modern web technologies, 
+      with a strong focus on performance, clean architecture, and reliability.
+      <br /><br />
+      I’ve worked on systems ranging from supply chain platforms to full-stack applications, implementing 
+      solutions such as role-based access control (RBAC), project management systems, and production-ready APIs.
+      <br /><br />
+      With a strong systems engineering foundation, I focus on building software that scales and lasts.
+    </p>
 
         <!-- STATS -->
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 max-w-2xl">
@@ -195,17 +203,50 @@
 
         <h2 class="section-title">Contact</h2>
 
-        <form @submit.prevent="handleSubmit" class="max-w-xl mt-8 space-y-4 w-full">
+<form @submit.prevent="handleSubmit" class="max-w-xl mt-8 space-y-4 w-full">
 
-          <input v-model="form.name" placeholder="Name" class="input"/>
-          <input v-model="form.email" placeholder="Email" class="input"/>
-          <textarea v-model="form.message" rows="4" class="input"/>
+  <!-- NAME -->
+  <input
+    v-model="form.name"
+    placeholder="Name"
+    class="input border border-gray-400 dark:border-white/10
+           bg-white dark:bg-white/5
+           text-gray-900 dark:text-white
+           placeholder-gray-500 dark:placeholder-gray-500
+           focus:border-cyan-500 dark:focus:border-cyan-400
+           shadow-sm dark:shadow-none"
+  />
 
-          <button class="btn-primary w-full">
-            {{ loading ? "Sending..." : "Send Message" }}
-          </button>
+  <!-- EMAIL -->
+  <input
+    v-model="form.email"
+    placeholder="Email"
+    class="input border border-gray-400 dark:border-white/10
+           bg-white dark:bg-white/5
+           text-gray-900 dark:text-white
+           placeholder-gray-500 dark:placeholder-gray-500
+           focus:border-cyan-500 dark:focus:border-cyan-400
+           shadow-sm dark:shadow-none"
+  />
 
-        </form>
+  <!-- MESSAGE -->
+  <textarea
+    v-model="form.message"
+    rows="4"
+    placeholder="Message"
+    class="input border border-gray-800 dark:border-white/10
+           bg-white dark:bg-white/5
+           text-gray-900 dark:text-white
+           placeholder-gray-500 dark:placeholder-gray-500
+           focus:border-cyan-500 dark:focus:border-cyan-400
+           shadow-sm dark:shadow-none"
+  />
+
+  <button class="btn-primary w-full">
+    {{ loading ? "Sending..." : "Send Message" }}
+  </button>
+
+</form>
 
       </section>
 
