@@ -2,9 +2,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@font-face {
-    font-family: 'Tagesschrift';
-    src: url('/src/assets/fonts/Tagesschrift.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+/* Google Font (modern + unique for dev portfolios) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Global font */
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* CV / special sections */
+.font-cv {
+  font-family: 'Space Grotesk', sans-serif;
+}
