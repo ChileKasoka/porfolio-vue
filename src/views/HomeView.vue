@@ -207,7 +207,7 @@
       </section>
 
       <!-- EXPERIENCE -->
-      <section id="experience" class="min-h-screen px-6 pt-24">
+      <section id="experience" class="min-h-screen px-6 py-24">
 
         <h2 class="section-title">Experience</h2>
 
@@ -441,57 +441,115 @@
 
 </section>
 
-      <!-- CONTACT -->
-      <section id="contact" class="min-h-screen flex flex-col justify-center items-center px-6">
+<!-- CONTACT -->
+<section id="contact" class="min-h-screen flex flex-col justify-center px-6 py-20">
 
-        <h2 class="section-title">Contact</h2>
+  <h2 class="section-title text-center">Contact</h2>
 
-<form @submit.prevent="handleSubmit" class="max-w-xl mt-8 space-y-4 w-full">
+  <div class="mt-10 grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto w-full">
 
-  <!-- NAME -->
-  <input
-    v-model="form.name"
-    placeholder="Name"
-    class="input border border-gray-400 dark:border-white/10
-           bg-white dark:bg-white/5
-           text-gray-900 dark:text-white
-           placeholder-gray-500 dark:placeholder-gray-500
-           focus:border-cyan-500 dark:focus:border-cyan-400
-           shadow-sm dark:shadow-none"
-  />
+    <!-- CONTACT CARD -->
+    <div class="glass-card p-6 bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10">
 
-  <!-- EMAIL -->
-  <input
-    v-model="form.email"
-    placeholder="Email"
-    class="input border border-gray-400 dark:border-white/10
-           bg-white dark:bg-white/5
-           text-gray-900 dark:text-white
-           placeholder-gray-500 dark:placeholder-gray-500
-           focus:border-cyan-500 dark:focus:border-cyan-400
-           shadow-sm dark:shadow-none"
-  />
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+        Get in Touch
+      </h3>
 
-  <!-- MESSAGE -->
-  <textarea
-    v-model="form.message"
-    rows="4"
-    placeholder="Message"
-    class="input border border-gray-800 dark:border-white/10
-           bg-white dark:bg-white/5
-           text-gray-900 dark:text-white
-           placeholder-gray-500 dark:placeholder-gray-500
-           focus:border-cyan-500 dark:focus:border-cyan-400
-           shadow-sm dark:shadow-none"
-  />
+      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+        Feel free to reach out for collaborations, freelance work, or any IT-related services. 
+        I'm open to opportunities and always ready to solve real-world problems.
+      </p>
 
-  <button class="btn-primary w-full">
-    {{ loading ? "Sending..." : "Send Message" }}
-  </button>
+      <!-- DETAILS -->
+      <div class="mt-6 space-y-4 text-sm">
 
-</form>
+        <div>
+          <p class="text-gray-500 dark:text-gray-400">Email</p>
+          <p class="text-gray-900 dark:text-white font-medium">
+            kasoka.chile@gmail.com
+          </p>
+        </div>
 
-      </section>
+        <div>
+          <p class="text-gray-500 dark:text-gray-400">Phone</p>
+          <p class="text-gray-900 dark:text-white font-medium">
+            +260 976 052 381
+          </p>
+        </div>
+
+        <div>
+          <p class="text-gray-500 dark:text-gray-400">Location</p>
+          <p class="text-gray-900 dark:text-white font-medium">
+            Lusaka, Zambia
+          </p>
+        </div>
+
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="mt-6">
+        <SocialMedia />
+      </div>
+
+    </div>
+
+    <!-- CONTACT FORM -->
+    <form @submit.prevent="handleSubmit" class="space-y-4 w-full">
+
+      <!-- NAME -->
+      <input
+        v-model="form.name"
+        placeholder="Name"
+        class="input border border-gray-400 dark:border-white/10
+               bg-white dark:bg-white/5
+               text-gray-900 dark:text-white
+               placeholder-gray-500
+               focus:border-cyan-500 dark:focus:border-cyan-400"
+      />
+
+      <!-- EMAIL -->
+      <input
+        v-model="form.email"
+        placeholder="Email"
+        class="input border border-gray-400 dark:border-white/10
+               bg-white dark:bg-white/5
+               text-gray-900 dark:text-white
+               placeholder-gray-500
+               focus:border-cyan-500 dark:focus:border-cyan-400"
+      />
+
+      <!-- COMPANY -->
+      <input
+        v-model="form.company"
+        placeholder="Company"
+        class="input border border-gray-400 dark:border-white/10
+               bg-white dark:bg-white/5
+               text-gray-900 dark:text-white
+               placeholder-gray-500
+               focus:border-cyan-500 dark:focus:border-cyan-400"
+      />
+
+      <!-- MESSAGE -->
+      <textarea
+        v-model="form.message"
+        rows="4"
+        placeholder="Message"
+        class="input border border-gray-400 dark:border-white/10
+               bg-white dark:bg-white/5
+               text-gray-900 dark:text-white
+               placeholder-gray-500
+               focus:border-cyan-500 dark:focus:border-cyan-400"
+      />
+
+      <button class="btn-primary w-full">
+        {{ loading ? "Sending..." : "Send Message" }}
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
 
       <FooterView />
 
@@ -558,7 +616,7 @@ onUnmounted(() => {
 /* =========================
    FORM
 ========================= */
-const form = ref({ name: "", email: "", message: "" });
+const form = ref({ name: "", email: "", company: "", message: "" });
 const loading = ref(false);
 
 const FORMSPREE_URL = "https://formspree.io/f/xnnbwypj";
