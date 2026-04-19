@@ -645,6 +645,7 @@ const links = [
   { text: "About", href: "#about" },
   { text: "Experience", href: "#experience" },
   { text: "Projects", href: "#projects" },
+  { text: "Services", href: "#services" },
   { text: "Contact", href: "#contact" },
 ];
 
