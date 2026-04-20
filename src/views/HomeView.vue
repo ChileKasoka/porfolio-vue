@@ -565,7 +565,7 @@ import SocialMedia from "../components/SocialMedia.vue";
 /* =========================
    THEME
 ========================= */
-const isDark = ref(true);
+const isDark = ref(false);
 
 const toggleTheme = () => {
   isDark.value = !isDark.value;
@@ -585,15 +585,25 @@ const toggleTheme = () => {
    INIT THEME + LIFE CYCLE
 ========================= */
 onMounted(() => {
-  // Theme
   const saved = localStorage.getItem("theme");
 
-  if (saved === "light") {
+  // DEFAULT = LIGHT MODE
+  if (!saved) {
     isDark.value = false;
     document.documentElement.classList.remove("dark");
-  } else {
+    localStorage.setItem("theme", "light");
+  }
+
+  // USER CHOSE DARK
+  else if (saved === "dark") {
     isDark.value = true;
     document.documentElement.classList.add("dark");
+  }
+
+  // USER CHOSE LIGHT (or fallback)
+  else {
+    isDark.value = false;
+    document.documentElement.classList.remove("dark");
   }
 
   // Scroll spy
