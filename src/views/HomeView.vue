@@ -85,6 +85,7 @@
 
       <img
         src="/stunna.jpg"
+        loading="lazy"
         class="w-24 h-24 rounded-full border-4 border-cyan-500/40 shadow-[0_0_30px_rgba(34,211,238,0.4)]"
       />
 
