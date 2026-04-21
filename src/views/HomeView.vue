@@ -143,7 +143,7 @@
 </div>
 
       <!-- HERO -->
-      <section id="home" class="min-h-screen px-6 flex flex-col justify-center">
+      <section id="home" class="min-h-screen px-6 flex flex-col justify-start pt-5 lg:pt-20">
 
         <h1 class="text-5xl lg:text-7xl font-extrabold">
           Hi, I’m <span class="gradient-text">Chile</span>
