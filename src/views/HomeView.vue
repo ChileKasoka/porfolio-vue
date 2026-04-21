@@ -84,7 +84,7 @@
     <div class="flex flex-col items-start text-left">
 
       <img
-        src="/stunna.jpg"
+        src="/stunna.webp"
         loading="lazy"
         class="w-24 h-24 rounded-full border-4 border-cyan-500/40 shadow-[0_0_30px_rgba(34,211,238,0.4)]"
       />
@@ -802,7 +802,7 @@ const state = reactive({
       title: "Church Management System",
       description:
         "ERP-style system for managing church operations and administration.",
-      image: "/shield.png",
+      image: "/shield.webp",
       link: "https://sci-eld.org/",
       tech: ["Vue.js", "Node.js", "MySQL"],
       details: [
