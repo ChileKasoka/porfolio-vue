@@ -143,13 +143,13 @@
 </div>
 
       <!-- HERO -->
-      <section id="home" class="min-h-screen px-6 flex flex-col justify-start pt-5 lg:pt-20">
+      <section id="home" class="min-h-screen px-6 flex flex-col justify-start lg:pt-20">
 
         <h1 class="text-5xl lg:text-7xl font-extrabold">
           Hi, I’m <span class="gradient-text">Chile</span>
         </h1>
 
-    <p class="mt-6 text-gray-700 dark:text-gray-300 w-full leading-relaxed">
+    <p class="mt-6 text-gray-700 dark:text-gray-300 max-w-3xl leading-relaxed">
       I’m a Computer Systems Engineer with experience across software development, cloud, database management, networking, and IT systems. 
       I build scalable applications and APIs using Spring Boot (Java), Golang, and modern web technologies, 
       while also working with system infrastructure, troubleshooting, and network environments.  
