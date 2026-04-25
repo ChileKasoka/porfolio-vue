@@ -42,7 +42,7 @@
     </aside>
 
     <!-- MOBILE TOP BAR -->
-<div class="lg:hidden fixed top-0 w-full bg-[#0f172a] border-b border-white/10 p-4 flex justify-between items-center z-50">
+  <div class="lg:hidden fixed top-0 w-full bg-[#0f172a] border-b border-white/10 p-4 flex justify-between items-center z-50">
 
   <span class="font-bold text-white">$ ck</span>
 
@@ -236,67 +236,78 @@
       </section>
 
       <!-- PROJECTS -->
-<section id="projects" class="px-6 min-h-screen flex flex-col justify-center">
+<section id="projects" class="px-6 min-h-[80vh] flex flex-col justify-center">
 
-  <h2 class="section-title">Projects</h2>
+  <h2 class="section-title text-center">Projects</h2>
 
-<div
-  class="relative mt-10 max-w-5xl mx-auto w-full"
-  @mouseenter="stopAutoplay"
-  @mouseleave="startAutoplay"
->
+  <div
+    class="relative mt-10 max-w-6xl mx-auto w-full"
+    @mouseenter="stopAutoplay"
+    @mouseleave="startAutoplay"
+  >
 
     <!-- CARD -->
-    <div class="project-card p-6 bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10">
+    <div class="project-card p-6 md:p-10 bg-white dark:bg-[#111827] border border-gray-200 dark:border-white/10 rounded-2xl shadow-lg">
 
-      <img
-        :src="state.projects[currentProject].image"
-        class="project-img mb-6 rounded-xl"
-      />
+      <div class="flex flex-col md:flex-row gap-8 items-center">
 
-      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-        {{ state.projects[currentProject].title }}
-      </h3>
+        <!-- IMAGE -->
+        <div class="w-full md:w-1/2 flex justify-center">
+          <img
+            :src="state.projects[currentProject].image"
+            class="w-full max-h-[300px] object-cover rounded-xl shadow-md"
+          />
+        </div>
 
-      <p class="text-gray-600 dark:text-gray-300 mb-4">
-        {{ state.projects[currentProject].description }}
-      </p>
+        <!-- CONTENT -->
+        <div class="w-full md:w-1/2">
 
-      <!-- DETAILS -->
-      <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1 mb-4">
-        <li v-for="(point, i) in state.projects[currentProject].details" :key="i">
-          • {{ point }}
-        </li>
-      </ul>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+            {{ state.projects[currentProject].title }}
+          </h3>
 
-      <!-- TECH -->
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span
-          v-for="(tech, i) in state.projects[currentProject].tech"
-          :key="i"
-          class="px-3 py-1 text-xs rounded-full border
-                 bg-cyan-500/10 text-cyan-600 dark:text-cyan-400
-                 border-cyan-300 dark:border-cyan-500/20"
-        >
-          {{ tech }}
-        </span>
-      </div>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            {{ state.projects[currentProject].description }}
+          </p>
 
-      <!-- LINK -->
-      <div class="mt-6">
-        <a
-          :href="state.projects[currentProject].link"
-          target="_blank"
-          class="btn-primary"
-        >
-          View Project
-        </a>
+          <!-- DETAILS -->
+          <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1 mb-4">
+            <li v-for="(point, i) in state.projects[currentProject].details" :key="i">
+              • {{ point }}
+            </li>
+          </ul>
+
+          <!-- TECH -->
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              v-for="(tech, i) in state.projects[currentProject].tech"
+              :key="i"
+              class="px-3 py-1 text-xs rounded-full border
+                     bg-cyan-500/10 text-cyan-600 dark:text-cyan-400
+                     border-cyan-300 dark:border-cyan-500/20"
+            >
+              {{ tech }}
+            </span>
+          </div>
+
+          <!-- LINK -->
+          <div class="mt-6">
+            <a
+              :href="state.projects[currentProject].link"
+              target="_blank"
+              class="btn-primary"
+            >
+              View Project
+            </a>
+          </div>
+
+        </div>
       </div>
 
     </div>
 
     <!-- CONTROLS -->
-    <div class="flex justify-between items-center mt-6">
+    <div class="flex justify-between items-center mt-6 max-w-3xl mx-auto">
 
       <button
         @click="prevProject"
@@ -313,7 +324,7 @@
           @click="currentProject = i"
           class="w-3 h-3 rounded-full cursor-pointer transition"
           :class="i === currentProject
-            ? 'bg-cyan-500'
+            ? 'bg-cyan-500 scale-110'
             : 'bg-gray-300 dark:bg-gray-600'"
         ></span>
       </div>
@@ -722,14 +733,14 @@ const experiences = [
     company: "Computers for Africa",
     period: "2025 - Present",
     description:
-      "ERP systems, AWS deployments, and backend services for enterprise operations.",
+      "ERP systems, AWS deployments, and backend services for enterprise operations. Worked on a construction management system used by multiple companies in Zambia.",
   },
   {
     role: "Software Systems Developer",
     company: "USAID eLMIS",
     period: "2023 - 2025",
     description:
-      "Supply chain systems, APIs, and data integration platforms.",
+      "Supply chain systems, APIs, and data integration platforms. Worked on the national supply chain system for Zambia’s health sector.",
   },
   {
     role: "IT Support / Networking",
@@ -737,6 +748,13 @@ const experiences = [
     period: "2022 - Present",
     description:
       "Networking, troubleshooting, and IT infrastructure support.",
+  },
+  {
+    role: "Software Developer/ Tester",
+    company: "Adanian Labs",
+    period: "2022",
+    description:
+      "LetsTwende incubated by Adanian labs. LetsTwende is a platform that connects customers to service providers. I worked on the development of the platform, testing, and deployment.",
   },
 ];
 
@@ -788,7 +806,7 @@ const state = reactive({
       title: "USAID Supply Chain System",
       description:
         "Enterprise supply chain platform for tracking inventory and suppliers.",
-      image: "/DHIS2.png",
+      image: "/openlmis.webp",
       link: "https://zm-elmis.org/",
       tech: ["Spring Boot", "PostgreSQL", "DHIS2"],
       details: [
@@ -812,6 +830,20 @@ const state = reactive({
         "Scalable multi-user system",
       ],
     },
+    {
+      title: "LetsTwende Service Platform",
+      description:
+        "A platform connecting customers to service providers across various industries.",
+      image: "/letstwende.png",
+      link: "https://letstwende.com/",
+      tech: ["Vue.js", "Node.js", "MongoDB"],
+      details: [
+        "Customer-provider matching system",
+        "Real-time booking and notifications",
+        "User reviews and ratings",
+        "Scalable architecture for growth",
+      ],
+    }
   ],
 });
 </script>

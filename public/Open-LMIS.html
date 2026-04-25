@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://zm-elmis.org/public/pages/login.html -->
+<html xmlns="http://www.w3.org/1999/html"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}</style>
+  
+  <meta content="utf-8" http-equiv="encoding">
+  <title openlmis-message="app.title">Open-LMIS</title>
+  <link rel="icon" href="https://zm-elmis.org/public/v1734437307822/favicon.ico" type="image/x-icon">
+  <script src="./Open-LMIS_files/jquery-2.0.0.min.js.download"></script>
+  <script src="./Open-LMIS_files/angular.min.js.download"></script>
+  <script src="./Open-LMIS_files/angular-route.min.js.download"></script>
+  <script src="./Open-LMIS_files/angular-cookies.js.download"></script>
+  <script src="./Open-LMIS_files/angular-resource.min.js.download"></script>
+  <script src="./Open-LMIS_files/bootstrap.min.js.download"></script>
+  <link rel="stylesheet" href="./Open-LMIS_files/bootstrap.min.css">
+  <script src="./Open-LMIS_files/angular-ui.min.js.download"></script>
+  <link rel="stylesheet" href="./Open-LMIS_files/angular-ui.min.css">
+  <script src="./Open-LMIS_files/underscore-min.js.download"></script>
+
+
+  <script type="text/javascript" src="./Open-LMIS_files/app.js.download"></script>
+  <!-- App directives -->
+  <script src="./Open-LMIS_files/form-toolbar.js.download"></script>
+  <script src="./Open-LMIS_files/openlmis-message.js.download"></script>
+  <script src="./Open-LMIS_files/openlmis-pagination.js.download"></script>
+  <script src="./Open-LMIS_files/placeholder.js.download"></script>
+  <script src="./Open-LMIS_files/ui-nav.js.download"></script>
+  <script src="./Open-LMIS_files/tab-scroll.js.download"></script>
+
+  <link rel="stylesheet" href="./Open-LMIS_files/login.css">
+  <script type="text/javascript" src="./Open-LMIS_files/services.js.download"></script>
+  <script type="text/javascript" src="./Open-LMIS_files/message-service.js.download"></script>
+  <script type="text/javascript" src="./Open-LMIS_files/login-controller.js.download"></script>
+  <script type="text/javascript" src="./Open-LMIS_files/locale-controller.js.download"></script>
+  <script src="./Open-LMIS_files/localStorage.js.download"></script>
+  <script src="./Open-LMIS_files/localStorageKeys.js.download"></script>
+  <!--[if IE 9]>
+  <link rel="stylesheet" href="/public/v1734437307822/css/ie9.css"/>
+  <![endif]-->
+</head>
+
+<body ng-app="openlmis" style="" class="ng-scope">
+<div class="login-page">
+  <!-- ngInclude: undefined --><ng-include src="&#39;/public/pages/login-form.html&#39;" class="ng-scope"><!--
+  ~ This program is part of the OpenLMIS logistics management information system platform software.
+  ~ Copyright © 2013 VillageReach
+  ~
+  ~ This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+  ~  
+  ~ This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.
+  ~ You should have received a copy of the GNU Affero General Public License along with this program.  If not, see http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org. 
+  -->
+
+<div class="login-container ng-scope">
+    <div class="modal-login-header">
+        <h1 openlmis-message="label.app.header">Electronic Logistics Management Information Systems</h1>
+        <!-- ngInclude: undefined --><ng-include src="&#39;/public/pages/locale-list.html&#39;" class="ng-scope"><!--
+  ~ This program is part of the OpenLMIS logistics management information system platform software.
+  ~ Copyright © 2013 VillageReach
+  ~
+  ~ This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+  ~  
+  ~ This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.
+  ~ You should have received a copy of the GNU Affero General Public License along with this program.  If not, see http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org. 
+  -->
+
+<div class="ng-scope">
+  <div class="locale-container ng-scope" ng-controller="LocaleController">
+    <ul>
+      <!-- ngRepeat: code in locales --><li ng-repeat="code in locales" class="ng-scope">
+        <a id="locale_pt" ng-class="{&#39;selected&#39;: selectedLocale == code}" ng-click="changeLocale(code)" openlmis-message="label.locale.pt" href="https://zm-elmis.org/public/pages/login.html">português</a>
+        <span>|</span>
+      </li><!-- end ngRepeat: code in locales --><li ng-repeat="code in locales" class="ng-scope">
+        <a id="locale_en" ng-class="{&#39;selected&#39;: selectedLocale == code}" ng-click="changeLocale(code)" openlmis-message="label.locale.en" href="https://zm-elmis.org/public/pages/login.html" class="selected">English</a>
+        <span>|</span>
+      </li><!-- end ngRepeat: code in locales --><li ng-repeat="code in locales" class="ng-scope">
+        <a id="locale_es" ng-class="{&#39;selected&#39;: selectedLocale == code}" ng-click="changeLocale(code)" openlmis-message="label.locale.es" href="https://zm-elmis.org/public/pages/login.html">español</a>
+        <span>|</span>
+      </li><!-- end ngRepeat: code in locales -->
+    </ul>
+  </div>
+</div></ng-include></div>
+
+    <div class="login-form ng-scope" ng-controller="LoginController">
+        <h2 id="signInLabel" openlmis-message="label.sign.in">Sign In</h2>
+
+        <form ng-submit="doLogin()" novalidate="" class="ng-dirty ng-valid ng-valid-required">
+            <fieldset>
+                <div class="login-form-row">
+                    <input ng-model="username" type="text" id="username" openlmis-message="placeholder.username" required="" autofocus="" class="ng-dirty ng-valid ng-valid-required" placeholder="Username">
+                </div>
+                <div class="login-form-row">
+                    <input ng-model="password" type="password" id="password" openlmis-message="placeholder.password" required="" class="ng-dirty ng-valid ng-valid-required" placeholder="Password">
+                </div>
+                <div id="loginError" class="alert alert-error ng-binding ng-hide" ng-bind="loginError" ng-show="loginError"></div>
+                <div class="login-form-row">
+                    <input class="btn btn-primary" type="submit" openlmis-message="button.sign.in" ng-disabled="disableSignInButton" value="Sign in">
+                </div>
+                <div class="login-form-row forgot-link">
+                    <a id="forgotPasswordLink" href="https://zm-elmis.org/public/pages/login.html" ng-click="goToForgotPassword()" openlmis-message="link.forgot.password">Forgot password?</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+</ng-include></div>
+
+</body></html>
