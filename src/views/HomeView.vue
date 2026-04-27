@@ -385,6 +385,36 @@
       </ul>
     </div>
 
+        <!-- MOBILE APP DEVELOPMENT -->
+    <div class="glass-card hover:scale-[1.02] transition">
+      <h3 class="text-xl font-bold text-cyan-500 dark:text-cyan-400">
+        Mobile App Development
+      </h3>
+      <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+        Building cross-platform mobile applications with modern frameworks and best practices.
+      </p>
+      <ul class="mt-4 text-sm text-gray-500 dark:text-gray-400 space-y-1">
+        <li>• React Native</li>
+        <li>• UI/UX</li>
+        <li>• Flutter</li>
+      </ul>
+    </div>
+
+            <!-- DNS MANAGEMENT -->
+    <div class="glass-card hover:scale-[1.02] transition">
+      <h3 class="text-xl font-bold text-cyan-500 dark:text-cyan-400">
+        DNS Management & Web Hosting
+      </h3>
+      <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+        Setting up and managing web hosting environments, including DNS configuration and SSL. Managing Email servers and configurations.
+      </p>
+      <ul class="mt-4 text-sm text-gray-500 dark:text-gray-400 space-y-1">
+        <li>• SSL Certificate</li>
+        <li>• Reverse Proxying</li>
+        <li>• Email Server Management</li>
+      </ul>
+    </div>
+
     <!-- CLOUD -->
     <div class="glass-card hover:scale-[1.02] transition">
       <h3 class="text-xl font-bold text-cyan-500 dark:text-cyan-400">
