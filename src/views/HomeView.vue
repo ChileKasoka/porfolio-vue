@@ -2,44 +2,60 @@
   <div class="flex bg-[#0b0f19] text-white">
 
     <!-- SIDEBAR -->
-    <aside class="hidden lg:flex flex-col justify-between w-72 h-screen fixed left-0 top-0 bg-[#0f172a] border-r border-white/10 p-6">
+<aside
+  class="hidden lg:flex flex-col justify-between w-72 h-screen fixed left-0 top-0 border-r border-white/10 bg-cover bg-center overflow-hidden"
+  style="background-image: url('/technuerons.png');"
+>
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-[#0f172a]/80"></div>
 
-      <!-- Top -->
-      <div>
-        <div class="flex flex-col items-left text-left">
+  <!-- Sidebar Content -->
+  <div class="relative z-10 flex flex-col justify-between h-full p-6">
 
-          <img
-            src="/stunna.jpg"
-            class="w-32 h-32 rounded-full border-4 border-cyan-500/40 shadow-[0_0_40px_rgba(34,211,238,0.4)]"
-          />
+    <!-- Top -->
+    <div>
+      <div class="flex flex-col items-start text-left">
 
-          <h2 class="mt-4 text-xl font-bold">Chilekesha Kasoka</h2>
-          <p class="text-gray-400 text-sm">COMPUTER SYSTEMS ENGINEER</p>
+        <img
+          src="/stunna.jpg"
+          class="w-32 h-32 rounded-full border-4 border-cyan-500/40 shadow-[0_0_40px_rgba(34,211,238,0.4)]"
+          alt="Chilekesha Kasoka"
+        />
 
-        </div>
+        <h2 class="mt-4 text-xl font-bold text-white">
+          Chilekesha Kasoka
+        </h2>
 
-        <!-- NAV -->
-        <nav class="mt-10 space-y-4">
-          <a
-            v-for="link in links"
-            :key="link.href"
-            @click.prevent="scrollToSection(link.href)"
-            :href="link.href"
-            :class="[
-              'sidebar-link',
-              activeSection === link.href ? 'sidebar-active' : ''
-            ]"
-          >
-            {{ link.text }}
-          </a>
-        </nav>
+        <p class="text-gray-300 text-sm">
+          COMPUTER SYSTEMS ENGINEER
+        </p>
+
       </div>
 
-      <div class="text-xs text-gray-500 text-left">
-        © {{ new Date().getFullYear() }}
-      </div>
+      <!-- NAV -->
+      <nav class="mt-10 space-y-4">
+        <a
+          v-for="link in links"
+          :key="link.href"
+          @click.prevent="scrollToSection(link.href)"
+          :href="link.href"
+          :class="[
+            'sidebar-link',
+            activeSection === link.href ? 'sidebar-active' : ''
+          ]"
+        >
+          {{ link.text }}
+        </a>
+      </nav>
+    </div>
 
-    </aside>
+    <!-- Footer -->
+    <div class="text-xs text-gray-400 text-left">
+      © {{ new Date().getFullYear() }}
+    </div>
+
+  </div>
+</aside>
 
     <!-- MOBILE TOP BAR -->
   <div class="lg:hidden fixed top-0 w-full bg-[#0f172a] border-b border-white/10 p-4 flex justify-between items-center z-50">
