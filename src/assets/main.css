@@ -8,6 +8,16 @@
 /* Global font */
 body {
   font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+  background: #f8fafc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* CV / special sections */
