@@ -97,8 +97,15 @@
             </div>
           </div>
           <div class="hero-side-note">
-            <span>Currently</span
-            ><strong>IT Officer<br />@ Phoenix of Zambia Assurance</strong>
+            <div>
+              <span>Currently</span>
+              <strong>IT Officer<br />@ Phoenix of Zambia Assurance</strong>
+            </div>
+            <img
+              class="employer-logo"
+              src="/cropped-zambia-logo-phoenix.png"
+              alt="Phoenix of Zambia Assurance"
+            />
           </div>
         </div>
         <div class="hero-meta">
@@ -127,15 +134,15 @@
           </p>
           <div class="stats-grid">
             <div>
-              <strong>4<span>+</span></strong
-              ><small>Years building software</small>
+              <strong>5<span>+</span></strong
+              ><small>Years building Systems/Offering IT support </small>
             </div>
             <div>
               <strong>12<span>+</span></strong
               ><small>Projects delivered</small>
             </div>
             <div>
-              <strong>5<span>+</span></strong
+              <strong>7<span>+</span></strong
               ><small>Teams supported</small>
             </div>
           </div>
@@ -310,9 +317,16 @@ const activeSection = ref("#home"),
   year = new Date().getFullYear();
 const experiences = [
   {
+    role: "IT Officer",
+    company: "Phoenix of Zambia Assurance",
+    period: "2026 — Present",
+    description:
+      "Overseeing IT infrastructure, systems administration, network operations, technical support, cloud services, and cybersecurity while ensuring the availability, reliability, and security of technology across the organization.",
+  },
+  {
     role: "Software Developer",
     company: "Computers for Africa",
-    period: "2025 — Present",
+    period: "2025 — 2026",
     description:
       "Building ERP systems, AWS deployments, and backend services for enterprise operations and construction management.",
   },
@@ -758,9 +772,12 @@ main {
 .hero-side-note {
   border-left: 1px solid #ced5df;
   padding-left: 1rem;
-  min-width: 12rem;
+  min-width: 17rem;
   font-size: 0.75rem;
   line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 .hero-side-note span {
   display: block;
@@ -769,6 +786,12 @@ main {
   letter-spacing: 0.1em;
   font-size: 0.62rem;
   margin-bottom: 0.4rem;
+}
+.employer-logo {
+  width: 6rem;
+  max-height: 6rem;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 .hero-meta {
   position: absolute;
