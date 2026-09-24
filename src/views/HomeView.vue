@@ -82,7 +82,7 @@
           <div>
             <h2>Engineering <span>useful</span><br />digital systems.</h2>
             <p class="hero-lede">
-              I design reliable software, APIs, and infrastructure for teams
+              I design and develop reliable systems, APIs, and manage infrastructure for teams
               that need their technology to do more.
             </p>
             <div class="hero-actions">
@@ -292,8 +292,7 @@
         </div>
       </section>
       <footer>
-        <span>Chile Kasoka</span><span>Designed & built with care</span
-        ><a href="#home" @click.prevent="scrollToSection('#home')"
+        <span>Chile Kasoka</span><a href="#home" @click.prevent="scrollToSection('#home')"
           >Back to top ↑</a
         >
       </footer>
