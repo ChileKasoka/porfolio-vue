@@ -3,6 +3,9 @@
     <aside class="desktop-rail">
       <div class="rail-orb rail-orb-one"></div>
       <div class="rail-orb rail-orb-two"></div>
+      <div class="star-field" aria-hidden="true">
+        <i v-for="star in stars" :key="star.id" class="star" :style="star.style"></i>
+      </div>
       <div class="rail-content">
         <a href="#home" class="brand" @click.prevent="scrollToSection('#home')"
           ><span class="brand-mark">CK</span><span>Chile Kasoka</span></a
@@ -315,6 +318,17 @@ const activeSection = ref("#home"),
   loading = ref(false),
   submitted = ref(false),
   year = new Date().getFullYear();
+const stars = [
+  ["5%", "12%", "1.5s", "0s", "2px"], ["83%", "8%", "2.1s", "0.4s", "3px"],
+  ["66%", "21%", "1.8s", "1s", "2px"], ["18%", "30%", "2.4s", "0.2s", "3px"],
+  ["91%", "39%", "1.6s", "0.8s", "2px"], ["8%", "53%", "2.2s", "1.4s", "2px"],
+  ["72%", "58%", "1.9s", "0.6s", "3px"], ["41%", "68%", "2.6s", "1.1s", "2px"],
+  ["88%", "75%", "1.7s", "0.3s", "2px"], ["14%", "83%", "2.3s", "1.5s", "3px"],
+  ["55%", "91%", "1.8s", "0.9s", "2px"], ["94%", "96%", "2.5s", "0.1s", "2px"],
+].map(([left, top, duration, delay, size], id) => ({
+  id,
+  style: { left, top, "--star-duration": duration, "--star-delay": delay, "--star-size": size },
+}));
 const experiences = [
   {
     role: "IT Officer",
@@ -550,6 +564,29 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
   left: -8rem;
   bottom: 5rem;
   background: #b7ef4e;
+}
+.star-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.star {
+  position: absolute;
+  width: var(--star-size);
+  height: var(--star-size);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 7px 2px rgba(255, 255, 255, 0.7);
+  opacity: 0.3;
+  animation: star-twinkle var(--star-duration) ease-in-out var(--star-delay) infinite alternate;
+}
+@keyframes star-twinkle {
+  from { opacity: 0.15; transform: translateY(0) scale(0.65); }
+  to { opacity: 0.95; transform: translateY(-8px) scale(1.25); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .star { animation: none; opacity: 0.6; }
 }
 .brand {
   display: flex;
